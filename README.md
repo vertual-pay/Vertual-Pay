@@ -7,13 +7,13 @@ phg68922
 71ijb52n
 # SSHログイン情報
 .sshディレクトリに入る。
-
-ssh -l nemypay -i id_xserver_rsa nemypay.xsrv.jp -p 10022
+```
+ ssh -l nemypay -i id_xserver_rsa nemypay.xsrv.jp -p 10022
+```
 
 Pwd kurata1998
-
-nemypay
 
 User sv6139
 
 Password nemypay2018
+
