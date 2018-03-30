@@ -17,3 +17,13 @@ User sv6139
 
 Password nemypay2018
 
+# Github連携
+```
+git init
+git remote add origin https://github.com/vertual-pay/Vertual-Pay.git
+echo "アカウント名" >> contributors.txt
+git add contributors.txt
+git commit -m "first commit"
+git push -u origin master
+```
+
