@@ -26,4 +26,15 @@ git add contributors.txt
 git commit -m "first commit"
 git push -u origin master
 ```
+# Route設定
+
+サイトトップ→get /
+ユーザー用新規登録 post /register
+送信完了画面 get /maildone
+tourokumaill  post /:id/password
+login  post /login 
+forget  post  /loginforget
+rule get  /rule 
+
+
 
