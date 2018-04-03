@@ -31,10 +31,16 @@ git push -u origin master
 サイトトップ→get /
 ユーザー用新規登録 post /register
 送信完了画面 get /maildone
-tourokumaill  post /:id/password
-login  post /login 
-forget  post  /loginforget
-rule get  /rule 
+パスワード設定  post /edit/:id
+ログイン post /login 
+忘れた場合  post  /loginforget
+利用規約 get  /rule  
+
+メインページ get /main/:id
+会計 get /main/:id/balance 
+設定　update /main/:id/config
+その他　get /main/:id/
+
 
 
 
