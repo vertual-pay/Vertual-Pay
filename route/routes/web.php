@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/rule', function (){
-    return view('rule');
-})
+Route::get('/main/index', 'MainController@index');
+Route::get('/rule', 'HomeController@rule');
+Route::get('/main/balance', 'MainController@balance');
+Route::get('/main/config', 'MainController@config');
+Route::match(['get','put'], '/main/config_update', 'MainController@config_update');
+Route::get('/main/other', 'MainController@other');
+Route::get('/main/history', 'MainController@history');

@@ -2,8 +2,6 @@
 
 namespace App\Jobs;
 
-use Mail;
-use App\Mail\EmailVerification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -19,6 +17,8 @@ protected $user;
      *
      * @return void
      */
+     use Mail;
+     use App\Mail\EmailVerification;
     public function __construct($user)
     {
          $this->user = $user;
@@ -32,6 +32,7 @@ protected $user;
     public function handle()
     {
       $email = new EmailVerification($this->user);
+      
      Mail::to($this->user->email)->send($email);
     }
 }

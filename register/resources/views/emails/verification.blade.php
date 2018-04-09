@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+@component('mail::message')
+# Introduction
+
+The body of your message.
+
+@component('mail::button', ['url' => ''])
+Button Text
+@endcomponent
+
 <div class=”container”>
 <div class=”row”>
 <div class=”col-md-8 col-md-offset-2">
@@ -24,7 +33,7 @@ Button Text
 @endcomponent
 
 
-@component('mail::button', ['url' => 'http://127.0.0.1:8000/verifyemail/$email_token'])
+@component('mail::button', ['url' => route('verifyemail',['email_token' => '$email_token'])])
     Verify
 @endcomponent
 Thanks,<br>
