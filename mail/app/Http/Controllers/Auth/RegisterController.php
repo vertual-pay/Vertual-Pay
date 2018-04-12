@@ -79,7 +79,7 @@ class RegisterController extends Controller
     {
       //Validation
       $validator = $this->validator($request->all());
-      if ($validator->falls())
+      if ($validator->fails())
       {
         $this->thorowValidationException($request, $validator);
       }
