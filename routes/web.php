@@ -22,3 +22,4 @@ Route::get('/account', 'HomeController@account');
 Route::get('/history', 'HomeController@history');
 Route::get('/config', 'HomeController@config');
 Route::update('/config', 'HomeController@config');
+Route::get('/qr', 'HomeController@qr');

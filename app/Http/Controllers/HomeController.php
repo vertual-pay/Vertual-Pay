@@ -40,4 +40,8 @@ class HomeController extends Controller
     {
       return view('config');
     }
+    public function qr()
+    {
+      return view('qr');
+    }
 }
