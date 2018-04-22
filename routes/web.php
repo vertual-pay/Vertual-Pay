@@ -23,3 +23,4 @@ Route::get('/history', 'HomeController@history');
 Route::get('/config', 'HomeController@config');
 Route::update('/config', 'HomeController@config');
 Route::get('/qr', 'HomeController@qr');
+Route::get('/other', 'HomeController@other');

@@ -44,4 +44,8 @@ class HomeController extends Controller
     {
       return view('qr');
     }
+    public function other()
+    {
+      return view('other');
+    }
 }
