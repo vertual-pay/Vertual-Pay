@@ -34,4 +34,9 @@ class User extends Authenticatable
         $this->status = 1;
         $this->save();
     }
+
+    public function config()
+    {
+      return $this->hasOne('App\Config');
+    }
 }

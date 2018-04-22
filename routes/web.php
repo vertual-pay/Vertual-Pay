@@ -14,13 +14,44 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//ログイン認証
 Auth::routes();
+//メール認証
 Route::get('/register/verify/{token}', 'Auth\RegisterController@verify');
 Route::get('/home', 'HomeController@index')->name('home');
+//会計ページ
 Route::get('/account', 'HomeController@account');
+//決済履歴
 Route::get('/history', 'HomeController@history');
-Route::get('/config', 'HomeController@config');
-Route::update('/config', 'HomeController@config');
+
 Route::get('/qr', 'HomeController@qr');
+//その他ページ
 Route::get('/other', 'HomeController@other');
+//設定ログイン
+Route::get('/signin',[
+  'uses' => 'ConfigController@getSignin',
+  'as' => 'config.signin'
+  ]);
+Route::post('/signin',[
+  'uses' => 'ConfigController@postSignin',
+  'as' => 'config.signin'
+  ]);
+//設定登録
+Route::group(['prefix' => 'config'], function() {
+
+  Route::get('/signup',[
+      'uses' => 'ConfigController@getSignup',
+      'as' => 'config.signup'
+    ]);
+
+  Route::post('/signup',[
+   'uses' => 'ConfigController@postSignup',
+   'as' => 'config.signup'
+   ]);
+
+   Route::get('/profile',[
+   'uses' => 'ConfigController@getProfile',
+   'as' => 'config.profile'
+   ]);
+
+  });
