@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request; //追加
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,5 +36,18 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * credentialsメソッドをオーバーライド
+     *   ログイン認証にstatusを追加する
+     */
+    protected function credentials(Request $request)
+    {
+      return [
+        'email' => $request->email,
+        'password' => $request->password,
+        'status' => 1,
+      ];
     }
 }

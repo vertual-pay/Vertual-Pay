@@ -38,6 +38,9 @@
                                 @endif
                             </div>
                         </div>
+                        @if(Session::has('message'))
+    <div class="alert alert-info">{{Session::get('message')}}</div>
+@endif
 
                         <div class="form-group row">
                             <div class="col-md-6">
