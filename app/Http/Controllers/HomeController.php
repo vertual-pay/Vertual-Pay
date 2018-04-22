@@ -25,4 +25,19 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function account()
+    {
+      return view('account');
+    }
+
+    public function history()
+    {
+      return view('history');
+    }
+
+    public function config()
+    {
+      return view('config');
+    }
 }
