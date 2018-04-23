@@ -16,6 +16,10 @@ class Config extends Model
       'password' => 'required'
     );
 
+    public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
     public function getData()
     {
       return $this->id. ': '. $this->title;

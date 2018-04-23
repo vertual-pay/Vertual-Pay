@@ -12,7 +12,10 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    window.Vue = require('vue');
 } catch (e) {}
+
+window.Vue = require('vue');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

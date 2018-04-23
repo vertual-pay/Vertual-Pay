@@ -49,9 +49,13 @@ Route::group(['prefix' => 'config'], function() {
    'as' => 'config.signup'
    ]);
 
-   Route::get('/profile',[
+  Route::get('/profile',[
    'uses' => 'ConfigController@getProfile',
    'as' => 'config.profile'
    ]);
+   /*Route::update('/profile',[
+    'uses' => 'ConfigController@updateProfile',
+     'as' => 'config.profile'
+]);*/
 
-  });
+});

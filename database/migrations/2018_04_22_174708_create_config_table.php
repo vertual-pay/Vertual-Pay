@@ -19,6 +19,10 @@ class CreateConfigTable extends Migration
             $table->string('address');
             $table->string('config_password');
             $table->timestamps();
+
+            $table->foreign('user_id')
+               ->references('id')
+               ->on('users')
         });
     }
 

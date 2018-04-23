@@ -12,16 +12,18 @@
   </div>
   @endif
   <form action="{{ route('config.signin') }}" method="post">
-  <div class="form-group">
-  <label for="address">XEMアドレス</label>
-  <input type="text" id="address" name="address" class="form-control">
-  </div>
+    {{ csrf_field() }}
   <div class="form-group">
   <label for="config_password">設定ページ用パスワード</label>
-  <input type="password" id="config_password" name="config_password" class="form-control">
+  <input type="text" id="config_password" name="config_password" class="form-control">
+  @if (isset( $_POST['config_password'])){
+    if( $_POST['config_password'] == ""){
+      echo 'パスワードを入力して下さい';
+    }
+  }
+  @endif
   </div>
   <button type="submit" class="btn btn-primary">ログイン</button>
-  {{ csrf_field() }}
   </form>
   </div>
   </div>
