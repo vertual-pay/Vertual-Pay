@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
 
-
+<div class="card-header--">{{ __('XEMアドレス・設定パスワード登録') }}</div>
 <form action="{{ route('config.signup') }}" method="post" class="form-horizontal" style="margin-top: 50px;" >
 
       @csrf
@@ -25,7 +25,7 @@
   {{ csrf_field() }}
   </form>
   </div>
-  <a class="alreadydone" href="http://127.0.0.1:8000/config/signin">{{ __('※ すでに登録している方はこちら') }}</a>
+  <a class="alreadydone" href="http://127.0.0.1:8000/signin">{{ __('※ すでに登録している方はこちら') }}</a>
 </div>
 </div>
 @endsection
