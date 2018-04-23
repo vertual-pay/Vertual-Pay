@@ -1,19 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
-<form action="{{ route('config.signup') }}" method="post" class="form-horizontal" style="margin-top: 50px;">
+<div class="container">
+    <div class="row justify-content-center">
 
-  <label for="address">XEMアドレス</label>
 
-  <input type="text" name="address"  id="address" placeholder="XEMアドレスを入力してください">
+<form action="{{ route('config.signup') }}" method="post" class="form-horizontal" style="margin-top: 50px;" >
 
-  <label  for="config_password">設定ページ用パスワード</label>
+      @csrf
+  <div class="form-group row">
 
-  <input type="password" name="config_password" id="config_password" placeholder="登録とは異なるパスワードを入力してください">
+  <label for="address" class="addressxem">XEMアドレス</label>
 
-  <button type="submit">新規登録</button>
+  <input type="text" name="address"  id="address" placeholder="XEMアドレスを入力してください" class="signupaddress">
+</div>
+
+<div class="form-group row">
+  <label  for="config_password" class="addressxem">設定ページ用パスワード</label>
+
+  <input type="password" name="config_password" id="config_password" placeholder="登録とは異なるパスワードを入力してください" class="signupaddress">
+
+</div>
+  <button type="submit" class="btn btn-primary-set">設定ページ登録</button>
   {{ csrf_field() }}
   </form>
   </div>
+  <a class="alreadydone" href="http://127.0.0.1:8000/config/signin">{{ __('※ すでに登録している方はこちら') }}</a>
+</div>
+</div>
 @endsection
