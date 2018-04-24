@@ -23,9 +23,9 @@ class ConfigController extends Controller
   // DBインサート
   $id = Auth::id();
   $address = $request->address;
+  //公開鍵のハイフンを消す。
   $address = str_replace('-', '',$address);
   $password = $request->config_password;
-
   $config = new Config(['address' => $address, 'user_id' => $id, 'config_password' => $password]);
   $config->save();
 
@@ -43,43 +43,48 @@ class ConfigController extends Controller
  $this->validate($request,[
  'config_password' => 'required|min:4'
  ]);
-
+//設定のパスワード取得
  $config_password = $request->config_password;
 
  //config_passwordのUserモデルを参照。
  $data = Config::where('config_password',$config_password)->first();
  $user_id = $data->user_id;
 
- $password = User::find($user_id)->first();
- $password = $password->password;
+ $account = User::find($user_id)->first();
+ $password = $account->password;
 
   //パスワードが存在しているか
- if(Auth::attempt(['password' => $password])){
+ if($password){
 
- return redirect()->route('config.profile');
+ return view('config.profile');
 }
-  return redirect()->route('config.profile');
 
  }
 
  public function updateProfile(Request $request)
  {
+   //ユーザパスワードの変更
    $id = Auth::id();
+     $data = Config::where('user_id', $id )->first();
+     $address = $data->address;
+
    if(isset($request->password)){
      User::find($id)->update(['password' => $request->password]);
    }
+   //ユーザメールのパスワード
    if(isset($request->email)){
      User::find($id)->update(['email' => $request->email]);
    }
-
+   return view('config.profile',compact('address'));
  }
 
  public function getProfile()
  {
+   //アドレスとパスワード
    $id = Auth::id();
    $data = Config::where('user_id', $id )->first();
    $address = $data->address;
-   $password = $data->config_password;
-   return view('config.profile', compact('address', 'password'));
+
+   return view('config.profile',compact('address'));
  }
 }

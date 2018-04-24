@@ -18,13 +18,13 @@ class CreateConfigTable extends Migration
             $table->integer('user_id');
             $table->string('address');
             $table->string('config_password');
+            $table->string('message')->default ('固定メッセージ');
+            $table->boolean('rate')->default(true);
+            $table->integer('rate_account')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')
-               ->references('id')
-               ->on('users')
         });
     }
+
 
     /**
      * Reverse the migrations.
