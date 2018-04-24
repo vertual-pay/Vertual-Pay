@@ -7,7 +7,7 @@
 
                                   <!-- タブ3つ	 -->
               		<div class="tabs">
-              			<a href="file:///Users/jintayamada/virtualpaywebpage/accountancypage.html">
+              			<a href="http://127.0.0.1:8000/account">
                           <div class="tab">
                           <h2 class="txt-contents">会計</h2>
                           <div class="accountancy">
@@ -17,7 +17,7 @@
                         </div>
 
 
-                        <a href="file:///Users/jintayamada/virtualpaywebpage/others.html">
+                        <a href="http://127.0.0.1:8000/other">
                         <div class="tab">
                           <div clasoss="others">
                           <h2 class="txt-contents">その他</h2>
@@ -27,7 +27,7 @@
                         </div>
 
 
-                        <a href="file:///Users/jintayamada/virtualpaywebpage/settingpage.html">
+                        <a href="http://127.0.0.1:8000/signin">
                         <div class="tab">
                           <div class="setup">
 
@@ -38,7 +38,7 @@
                           </p>
                         </div>
                       </div>
-              
+
         </div>
     </div>
 </div>
