@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 //ログイン認証
 Auth::routes();
 //メール認証

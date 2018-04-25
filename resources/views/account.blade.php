@@ -61,8 +61,8 @@
                         			</p>
                         	<!-- 戻る -->
                         	<div class="main">
-                        			<p>
-                        				<input class="return btn btn-primary-set" type="button" value="トップページへ戻る"  href="http://127.0.0.1:8000/home">
+                        			<a>
+										<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る"  ></a>
                         			</p>
                         	</div>
                         </body>
