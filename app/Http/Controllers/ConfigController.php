@@ -63,9 +63,29 @@ class ConfigController extends Controller
 
  public function updateProfile(Request $request)
  {
-   //ユーザパスワードの変更
+     //User取得
+     $user = Auth::user();
+
+   //Config取得
    $id = Auth::id();
      $data = Config::where('user_id', $id )->first();
+
+     //Userモデルの変更
+     $user->name = $request->name;
+     $user->passwotd = $request->password;
+     $user->email = $request->email;
+
+     $user->save();
+
+     //Configモデルの変更
+     $data->config_password;
+     $data->address;
+     $data->message;
+     $data->rate_account;
+     $data->
+
+
+
 
      $address = $data->address;
      //boolean,message,password,email,config_password,integer,
