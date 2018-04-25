@@ -56,7 +56,7 @@ class ConfigController extends Controller
   //パスワードが存在しているか
  if($password){
 
- return view('config.profile');
+     return redirect()->action('ConfigController@getProfile');
 }
 
  }
@@ -66,16 +66,11 @@ class ConfigController extends Controller
    //ユーザパスワードの変更
    $id = Auth::id();
      $data = Config::where('user_id', $id )->first();
-     $address = $data->address;
 
-   if(isset($request->password)){
-     User::find($id)->update(['password' => $request->password]);
-   }
-   //ユーザメールのパスワード
-   if(isset($request->email)){
-     User::find($id)->update(['email' => $request->email]);
-   }
-   return view('config.profile',compact('address'));
+     $address = $data->address;
+     //boolean,message,password,email,config_password,integer,
+
+     return redirect()->action('ConfigController@getProfile');
  }
 
  public function getProfile()
@@ -84,7 +79,23 @@ class ConfigController extends Controller
    $id = Auth::id();
    $data = Config::where('user_id', $id )->first();
    $address = $data->address;
+   $message = $data->message;
 
-   return view('config.profile',compact('address'));
+
+   //APIレート
+     $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
+     $json = file_get_contents($base_url);
+     $json = json_decode($json, JSON_PRETTY_PRINT);
+     $price_usd = $json[0]["price_usd"];
+  //日本円
+     $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
+     $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
+     $price_jpy = $japanese_json["JPY"];
+
+     //APIレート　* 日本円
+     $rate = $price_jpy * $price_usd;
+
+
+   return view('config.profile',compact('address','rate','message'));
  }
 }
