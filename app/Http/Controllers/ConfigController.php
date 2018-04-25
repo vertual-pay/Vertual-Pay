@@ -75,11 +75,16 @@ class ConfigController extends Controller
 
  public function getProfile()
  {
+
    //アドレスとパスワード
    $id = Auth::id();
    $data = Config::where('user_id', $id )->first();
    $address = $data->address;
    $message = $data->message;
+
+   //お店の名前
+     $user = Auth::user();
+     $store_name = $user->name;
 
 
    //APIレート
@@ -96,6 +101,6 @@ class ConfigController extends Controller
      $rate = $price_jpy * $price_usd;
 
 
-   return view('config.profile',compact('address','rate','message'));
+   return view('config.profile',compact('address','rate','message','store_name'));
  }
 }
