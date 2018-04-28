@@ -8,7 +8,11 @@ phg68922
 # SSHログイン情報
 .sshディレクトリに入る。
 ```
- ssh -l nemypay -i id_xserver_rsa nemypay.xsrv.jp -p 10022
+cd ~/.ssh
+```
+鍵をコマンドする
+```
+ ssh -l nemypay -i authorized.key nemypay.xsrv.jp -p 10022
 ```
 
 Pwd kurata1998
