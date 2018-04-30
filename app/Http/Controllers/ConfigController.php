@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Auth;
 use \App\Config;
 use \App\User;
+use Image;
 
 
 class ConfigController extends Controller
@@ -23,13 +25,15 @@ class ConfigController extends Controller
   // DBインサート
   $id = Auth::id();
   $address = $request->address;
+  //設定モデル
+
   //公開鍵のハイフンを消す。
   $address = str_replace('-', '',$address);
   $password = $request->config_password;
   $config = new Config(['address' => $address, 'user_id' => $id, 'config_password' => $password]);
   $config->save();
+  return view('config.profile');
 
-  return view('config.profile', compact('address','password'));
 }
 
     //ログイン
@@ -66,29 +70,61 @@ class ConfigController extends Controller
      //User取得
      $user = Auth::user();
 
+
    //Config取得
    $id = Auth::id();
      $data = Config::where('user_id', $id )->first();
-
      //Userモデルの変更
-     $user->name = $request->name;
-     $user->passwotd = $request->password;
-     $user->email = $request->email;
+     //お店の名前
+     if($request->name){
+       $user->name = $request->name;
+       $user->save();
+     }
+     //パスワード変更
+     if($request->password){
+       $user->password = $request->password;
+       $user->save();
+     }
+     if($request->email){
+       $user->email = $request->email;
+       $user->save();
+     }
+     if($request->hasFile('avatar')){
+       $avatar = $request->file('avatar');
+       $filename = time() . '.' . $avatar->getClientOriginalExtension();
+       Image::make($avatar)->resize(300, 300)->save(public_path('/avatars/' . $filename ));
+       $user->avatar = $filename;
+       $user->save();
+     }
+     else {
+      dd($user);
+     }
 
-     $user->save();
 
-     //Configモデルの変更
-     $data->config_password;
-     $data->address;
-     $data->message;
-     $data->rate_account;
-     $data->
+     //Config取得
+       $id = $user->id;
+       $data = Config::where('user_id', $id)->first();
 
+//設定ページのパスワード変更
+       if($request->config_password){
+         $data->config_password = $request->config_password;
+         $data->save();
+       }
 
+       if($request->address){
+         $data->address = $request->address;
+         $data->save();
+       }
 
+       if($request->message){
+         $data->message = $request->message;
+         $data->save();
+       }
 
-     $address = $data->address;
-     //boolean,message,password,email,config_password,integer,
+       if($request->rate_account){
+         $data->rate_account = $request->rate_account;
+         $data->save();
+       }
 
      return redirect()->action('ConfigController@getProfile');
  }
@@ -97,14 +133,9 @@ class ConfigController extends Controller
  {
 
    //アドレスとパスワード
-   $id = Auth::id();
-   $data = Config::where('user_id', $id )->first();
-   $address = $data->address;
-   $message = $data->message;
-
-   //お店の名前
-     $user = Auth::user();
-     $store_name = $user->name;
+   $user = Auth::user();
+   $config
+    = Config::where('user_id', $user->id)->first();
 
 
    //APIレート
@@ -120,7 +151,6 @@ class ConfigController extends Controller
      //APIレート　* 日本円
      $rate = $price_jpy * $price_usd;
 
-
-   return view('config.profile',compact('address','rate','message','store_name'));
+   return view('config.profile',compact('config','rate','user'));
  }
 }

@@ -55,7 +55,7 @@ Route::group(['prefix' => 'config'], function() {
       'uses' => 'ConfigController@getProfile',
       'as' => 'config.profile'
    ]);
-  Route::put('/profile',[
+  Route::post('/profile',[
       'uses' => 'ConfigController@updateProfile',
       'as' => 'config.profile'
    ]);
