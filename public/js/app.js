@@ -50067,24 +50067,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [_vm._v(" QR Code ")])
-          ])
-        ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("h1", [_vm._v("QRコード")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { attrs: { id: "qr" } },
+          [
+            _c("qr", [
+              _vm._v(
+                '":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}">'
+              )
+            ])
+          ],
+          1
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

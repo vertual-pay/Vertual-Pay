@@ -7,7 +7,7 @@
 
                                   <!-- タブ3つ	 -->
               		<div class="tabs">
-              			<a href="http://127.0.0.1:8000/account">
+              			<a href="/account">
                           <div class="tab">
                           <h2 class="txt-contents">会計</h2>
                           <div class="accountancy">
@@ -17,7 +17,7 @@
                         </div>
 
 
-                        <a href="http://127.0.0.1:8000/other">
+                        <a href="/other">
                         <div class="tab">
                           <h2 class="txt-contents">その他</h2>
                             <div clasoss="others">
@@ -27,7 +27,7 @@
                         </div>
 
 
-                        <a href="http://127.0.0.1:8000/signin">
+                        <a href="/signin">
                         <div class="tab">
 
                           <h2 class="txt-contents">設定</h2>
