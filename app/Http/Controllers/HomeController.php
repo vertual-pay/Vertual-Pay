@@ -33,8 +33,8 @@ class HomeController extends Controller
 //会計処理
     public function account()
     {
-
-      return view('account');
+      $user = Auth::user();
+      return view('account',compact('user'));
     }
 //決済履歴
     public function history()
