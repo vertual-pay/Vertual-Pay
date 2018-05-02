@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use \App\Config;
 use \App\User;
+use Base32\Base32;
+
 
 
 class HomeController extends Controller

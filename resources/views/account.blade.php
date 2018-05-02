@@ -24,10 +24,11 @@
         window.Laravel = window.Laravel || {};
         window.Laravel.csrfToken = "{{csrf_token()}}";
     </script>
-
+    
     <div id="qr">
     <qr><img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}"></qr>
 </div>
+
 
 
 
