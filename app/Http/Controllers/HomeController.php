@@ -36,7 +36,20 @@ class HomeController extends Controller
     public function account()
     {
       $user = Auth::user();
-      return view('account',compact('user'));
+
+      //APIレート
+        $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
+        $json = file_get_contents($base_url);
+        $json = json_decode($json, JSON_PRETTY_PRINT);
+        $price_usd = $json[0]["price_usd"];
+     //日本円
+        $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
+        $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
+        $price_jpy = $japanese_json["JPY"];
+
+        //APIレート　* 日本円
+        $rate = $price_jpy * $price_usd;
+      return view('account',compact('user', 'rate','price_jpy'));
     }
 //決済履歴
     public function history()

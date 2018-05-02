@@ -24,7 +24,7 @@
         window.Laravel = window.Laravel || {};
         window.Laravel.csrfToken = "{{csrf_token()}}";
     </script>
-    
+
     <div id="qr">
     <qr><img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}"></qr>
 </div>
@@ -44,7 +44,7 @@
                         		</div>
 
                         		<div class="JPY">
-                        			<p>JPY(USD)</p>
+                        			<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
                         		</div>
                         		<!-- 合計金額入力ここまで-->
                             @if(isset($user))
@@ -54,14 +54,14 @@
                         		<!-- レート -->
                         		<h3>レート</h3>
                         		<div class="rate">
-                        			<p>JPY(USD)/XEM</p>
+                        			<p>JPY(USD)/XEM<?php echo round($rate,2)?></p>
                         		</div>
 
                         		<!-- レート -->
                         		<!-- 合計金額 -->
                         		<h3>支払金額</h3>
                         		<div class ="sum">
-                        				<p>JPY(USD)</p>
+                        				<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
                         				<p>XEM</p>
                         		</div>
 
