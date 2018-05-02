@@ -50,17 +50,11 @@ class HomeController extends Controller
       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($curl);
-
-
       $result = json_decode($response, JSON_PRETTY_PRINT);
 
-        $price = $result["data"][1]["transaction"]["fee"];
-        $recipient = $result["data"][1]["transaction"]["recipient"];
-        $message = $result["data"][1]["transaction"]["message"];
+        return view('history',compact('result'));
 
-      return view('history',compact('price', 'recipient', 'message'));
     }
-
     public function qr()
     {
       return view('qr');
