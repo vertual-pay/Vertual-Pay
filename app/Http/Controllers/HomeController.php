@@ -36,6 +36,8 @@ class HomeController extends Controller
     public function account()
     {
       $user = Auth::user();
+      //
+      $data = Config::where('user_id', $user->id)->first();
 
       //APIレート
         $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
@@ -49,7 +51,7 @@ class HomeController extends Controller
 
         //APIレート　* 日本円
         $rate = $price_jpy * $price_usd;
-      return view('account',compact('user', 'rate','price_jpy'));
+      return view('account',compact('data', 'rate','price_jpy','user'));
     }
 //決済履歴
     public function history()
@@ -69,10 +71,6 @@ class HomeController extends Controller
 
         return view('history',compact('result'));
 
-    }
-    public function qr()
-    {
-      return view('qr');
     }
     public function other()
     {

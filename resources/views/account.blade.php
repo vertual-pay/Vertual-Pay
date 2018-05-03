@@ -25,6 +25,7 @@
         window.Laravel.csrfToken = "{{csrf_token()}}";
     </script>
 
+
     <div id="qr">
     <qr><img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}"></qr>
 </div>
@@ -55,6 +56,8 @@
                         		<h3>レート</h3>
                         		<div class="rate">
                         			<p>JPY(USD)/XEM<?php echo round($rate,2)?></p>
+                            <h3>アドレス</h3>
+                              <p>{{$data->address}}</p>
                         		</div>
 
                         		<!-- レート -->
@@ -69,10 +72,11 @@
                         		<!-- 合計金額ここまで -->
 
                         		<!-- QR -->
-                        			<p>
-                        				<input class="QR btn btn-primary-set" type="button" value="QRコードを発行する"  href="file:///Users/jintayamada/virtualpaywebpage/QR.html" onclick="tbox1()">
-                        				<script type="text/javascript" src="QR.js">
-                        				</script>
+                        			<p>QRコードを発行する
+
+
+        <img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}" style="widrh:150px; height:10px;">
+
                         			</p>
                         	<!-- 戻る -->
                         	<div class="main">
