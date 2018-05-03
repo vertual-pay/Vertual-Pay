@@ -4,19 +4,19 @@
 <div>
 <form enctype="multipart/form-data" action = "{{route('config.profile')}}" method="post" class="form-horizontal" style="margin-top: 50px;">
 
-    <input type="file" name="avatar" style="float: margin-right:50px;">
-    <input type="text" name="message"  id="message" placeholder="固定メッセージ">
-    <input type="text" name="message"  id="boolean" placeholder="reta設定">
-    <input type="checkbox" name="integer"  id="integer" placeholder="レート">
+    <p><input type="file" name="avatar" style="float: margin-right:50px;"></p>
+    <p><input type="text" name="message"   id="message" placeholder="固定メッセージ"></p>
+    <p><input type="integer" name="rate_account"   id="rate_account" placeholder="rate設定"></p>
+    <input type="checkbox" name="integer"  id="integer">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-     <input type="submit" class="pull-right btn btn-sm btn-primary">
+     <p><input type="submit" class="pull-right btn btn-sm btn-primary"></p>
 
 </form>
 </div>
 <div>
   @if(isset($config))
-   {{$config->address}}
-   {{$config->message}}
+   <p>{{$config->message}}</p>
+   <p>{{$config->rate_account}}</p>
    @endif
  </div>
  @if(isset($user))

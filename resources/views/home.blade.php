@@ -43,4 +43,19 @@
         </div>
     </div>
 </div>
+<script>
+import Modal from "./components/Modal.vue";
+
+export default {
+    name: 'app',
+    data() {
+        return {
+            showModal: false
+        }
+    },
+    components: {
+        Modal
+    }
+}
+</script>
 @endsection

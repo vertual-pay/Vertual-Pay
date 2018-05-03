@@ -96,9 +96,7 @@ class ConfigController extends Controller
        $user->avatar = $filename;
        $user->save();
      }
-     else {
-      dd($user);
-     }
+
 
 
      //Config取得
@@ -106,25 +104,16 @@ class ConfigController extends Controller
        $data = Config::where('user_id', $id)->first();
 
 //設定ページのパスワード変更
-       if($request->config_password){
          $data->config_password = $request->config_password;
-         $data->save();
-       }
 
-       if($request->address){
          $data->address = $request->address;
-         $data->save();
-       }
 
-       if($request->message){
          $data->message = $request->message;
-         $data->save();
-       }
 
-       if($request->rate_account){
          $data->rate_account = $request->rate_account;
+         
          $data->save();
-       }
+
 
      return redirect()->action('ConfigController@getProfile');
  }
