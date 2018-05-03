@@ -18,7 +18,7 @@ class CreateConfigTable extends Migration
             $table->integer('user_id');
             $table->string('address')->nullable();
             $table->string('config_password')->nullable();
-            $table->string('message')->default ('固定メッセージ');
+            $table->string('message')->default('固定メッセージ')->nullable();
             $table->boolean('rate')->default(true);
             $table->integer('rate_account')->nullable();
             $table->timestamps();

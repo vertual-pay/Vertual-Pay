@@ -26,10 +26,11 @@
     </script>
 
 
-    <div id="qr">
-    <qr><img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}"></qr>
-</div>
-
+    @if (env('APP_DEBUG'))
+           <script src="{{ asset('js/vue.js') }}"></script>
+       @else
+           <script src="{{ asset('js/vue.min.js') }}"></script>
+       @endif
 
 
 
@@ -38,11 +39,13 @@
                         		<!-- メッセージ入力ここまで -->
 
                         		<!-- 合計金額入力 -->
-
+                        <div id="app">
                         			<h3 class="summ">合計金額を入力</h3>
                               <div class="suminput">
-                              <input v-model.number="message" placeholder="edit me">
+                              <input v-model="amount" placeholder="入金して欲しい金額を入力">
                         		</div>
+                            <p>@{{ amount }}</p>
+                          </div>
 
                         		<div class="JPY">
                         			<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
@@ -72,15 +75,26 @@
                         		<!-- 合計金額ここまで -->
 
                         		<!-- QR -->
-                        			<p>QRコードを発行する
+                            <p>QRコードを発行する
+                              <?php $address = $data->address;
+                                    $message = $data->message;
+                                    $rate = $data->rate_account;
+                                    dd($address);
+            $qr_array = ['v' => 2, 'type' => 2,
+                    'data' =>
+                    ['addr' => $address, 'amount' => 120, 'msg' => '伝票番号: お店から一言$message', 'name' => 'Vertual-Pay']];
+                    $qr_json = json_encode($qr_array);
+                    $qr_json = json_decode($qr_json);
+                    dd($qr_json);
+                                    ?>
 
-
-        <img v-img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl={"v":2,"type":2,"data":{"addr":"NBZNQL2JDWTGUAW237PXV4SSXSPORY43GUSWGSB7","amount":1000000,"msg":"invoice","name":"Qiita XEM invoice"}}" style="widrh:150px; height:10px;">
-
-                        			</p>
+                                    <!--{"v":2,"type":2,"data":{"addr":"{{$address}}","amount":1000000,"msg":"{{$data}}", 伝票番号:","name":"Qiita XEM invoice"}}"-->
+      <qr><img v-img src="http://chart.apis.google.com/chart?chs=500x500&cht=qr&chl=$qr_json" style="width:150px; height: 150px;"></qr>
+    </p>
                         	<!-- 戻る -->
                         	<div class="main">
-                        			<a>
+
+                        			<p>
 										<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る"  ></a>
                         			</p>
                         	</div>
@@ -89,5 +103,6 @@
                         </div>
 
     </div>
+
 
 @endsection

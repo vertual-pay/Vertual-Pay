@@ -15,8 +15,8 @@
 </div>
 <div>
   @if(isset($config))
-   <p>{{$config->message}}</p>
-   <p>{{$config->rate_account}}</p>
+   <p>伝票に乗る固定メッセージ:　{{$config->message}}</p>
+   <p>現在のレート御店のレート:　{{$config->rate_account}}XEM/JPY</p>
    @endif
  </div>
  @if(isset($user))
