@@ -7,6 +7,10 @@
     <p><input type="file" name="avatar" style="float: margin-right:50px;"></p>
     <p><input type="text" name="message"   id="message" placeholder="固定メッセージ"></p>
     <p><input type="integer" name="rate_account"   id="rate_account" placeholder="rate設定"></p>
+    <b>アドレスを変更する</b>
+    @if(isset($config)) <p>あなたのアドレスは:{{$config->address}}</p>
+    @endif
+    <p><input type="integer" name="address"   id="address" placeholder="アドレス変更"></p>
     <input type="checkbox" name="integer"  id="integer">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
      <p><input type="submit" class="pull-right btn btn-sm btn-primary"></p>
@@ -15,6 +19,7 @@
 </div>
 <div>
   @if(isset($config))
+   <p>あなたのアドレスは:{{$config->address}}</p>
    <p>伝票に乗る固定メッセージ:　{{$config->message}}</p>
    <p>現在のレート御店のレート:　{{$config->rate_account}}XEM/JPY</p>
    @endif

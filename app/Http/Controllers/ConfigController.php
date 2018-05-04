@@ -11,7 +11,8 @@ use Image;
 
 
 class ConfigController extends Controller
-{public function getSignup(){
+{
+  public function getSignup(){
       return View('config.signup');
    }
 
@@ -26,13 +27,14 @@ class ConfigController extends Controller
   $id = Auth::id();
   $address = $request->address;
   //設定モデル
+  $config= Config::where('user_id', $id)->first();
 
   //公開鍵のハイフンを消す。
   $address = str_replace('-', '',$address);
   $password = $request->config_password;
   $config = new Config(['address' => $address, 'user_id' => $id, 'config_password' => $password]);
   $config->save();
-  return view('config.profile');
+  return view('config.profile',compact('config'));
 
 }
 
@@ -44,9 +46,10 @@ class ConfigController extends Controller
 //アドレスとログ
   public function postSignin(Request $request)
  {
+
  $this->validate($request,[
  'config_password' => 'required|min:4'
- ]);
+ ]  );
 //設定のパスワード取得
  $config_password = $request->config_password;
 
@@ -69,26 +72,12 @@ class ConfigController extends Controller
  {
      //User取得
      $user = Auth::user();
-
-
-   //Config取得
-   $id = Auth::id();
-     $data = Config::where('user_id', $id )->first();
+     $data = Config::where('user_id', $user->id)->first();
      //Userモデルの変更
      //お店の名前
-     if($request->name){
-       $user->name = $request->name;
-       $user->save();
-     }
-     //パスワード変更
-     if($request->password){
-       $user->password = $request->password;
-       $user->save();
-     }
-     if($request->email){
-       $user->email = $request->email;
-       $user->save();
-     }
+     if(isset($request->name)){$user->password(['name' => $request->name]);}
+     if(isset($request->password)){$user->update(['password' => $request->password]);}
+     if(isset($request->email)){$user->update(['email' => $request->email]);}
      if($request->hasFile('avatar')){
        $avatar = $request->file('avatar');
        $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -96,24 +85,11 @@ class ConfigController extends Controller
        $user->avatar = $filename;
        $user->save();
      }
-
-
-
-     //Config取得
-       $id = $user->id;
-       $data = Config::where('user_id', $id)->first();
-
-//設定ページのパスワード変更
-         $data->config_password = $request->config_password;
-
-         $data->address = $request->address;
-
-         $data->message = $request->message;
-
-         $data->rate_account = $request->rate_account;
-         
-         $data->save();
-
+        if(isset($request->config_password))$data->config_password = $request->config_password;
+        if(isset($request->message))$data->message = $request->message;
+        if(isset($request->address))$data->address = $request->address;
+        if(isset($request->rate_account))$data->rate_account = $request->rate_account;
+        $data->save();
 
      return redirect()->action('ConfigController@getProfile');
  }
@@ -123,8 +99,7 @@ class ConfigController extends Controller
 
    //アドレスとパスワード
    $user = Auth::user();
-   $config
-    = Config::where('user_id', $user->id)->first();
+   $config = Config::where('user_id', $user->id)->first();
 
 
    //APIレート

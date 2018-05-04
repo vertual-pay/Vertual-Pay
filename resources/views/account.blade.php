@@ -11,11 +11,11 @@
 
 
                                                   <!-- メッセージ入力 -->
-                        		<h3 class="handmessage">手動メッセージ入力</h3>
+                        		<h3 class="handmessage">伝票番号</h3>
                             <div class="message">
-                        		<input v-model="message" placeholder="edit me">
+                        		<input name="message" placeholder="edit me" method="get">
                           </div>
-                        		<p class="inputt">※伝票番号を入力できます。
+                        		<p class="input">※伝票番号を入力できます。
                         		<br>
                         		※ニックネームを入力すると会費などの集計が楽になります。<br>
                         		※設定した固定メッセージも表示されます。<br>
@@ -37,14 +37,22 @@
 
 
                         		<!-- メッセージ入力ここまで -->
+                            <div class="row justify-content-center">
+                              <?php
 
+                                    $address = $data->address;
+                                    $origin_message = $data->message;
+                                    $rate = $data->rate_account;
+                                    $qr_json = array('v' => 2 ,'type' => '2', 'data' => ["addr" => $address, 'amount' =>300000, 'msg' => $origin_message, 'name' => 'Vertual-Pay' ] );
+                                    $qr_json = json_encode($qr_json);
+
+                                    ?>
                         		<!-- 合計金額入力 -->
                         <div id="app">
                         			<h3 class="summ">合計金額を入力</h3>
                               <div class="suminput">
-                              <input v-model="amount" placeholder="入金して欲しい金額を入力">
+                              <input  placeholder="入金して欲しい金額を入力">
                         		</div>
-                            <p>@{{ amount }}</p>
                           </div>
 
                         		<div class="JPY">
@@ -60,7 +68,7 @@
                         		<div class="rate">
                         			<p>JPY(USD)/XEM<?php echo round($rate,2)?></p>
                             <h3>アドレス</h3>
-                              <p>{{$data->address}}</p>
+                              <p>{{$address}}</p>
                         		</div>
 
                         		<!-- レート -->
@@ -75,27 +83,17 @@
                         		<!-- 合計金額ここまで -->
 
                         		<!-- QR -->
-                            <p>QRコードを発行する
-                              <?php $address = $data->address;
-                                    $message = $data->message;
-                                    $rate = $data->rate_account;
-                                    dd($address);
-            $qr_array = ['v' => 2, 'type' => 2,
-                    'data' =>
-                    ['addr' => $address, 'amount' => 120, 'msg' => '伝票番号: お店から一言$message', 'name' => 'Vertual-Pay']];
-                    $qr_json = json_encode($qr_array);
-                    $qr_json = json_decode($qr_json);
-                    dd($qr_json);
-                                    ?>
+                            <p>QRコードを発行する</p>
+                          {!! QrCode::size(300)->generate($qr_json); !!}
 
-                                    <!--{"v":2,"type":2,"data":{"addr":"{{$address}}","amount":1000000,"msg":"{{$data}}", 伝票番号:","name":"Qiita XEM invoice"}}"-->
-      <qr><img v-img src="http://chart.apis.google.com/chart?chs=500x500&cht=qr&chl=$qr_json" style="width:150px; height: 150px;"></qr>
-    </p>
+
+      <qr><img v-img src="http://chart.apis.google.com/chart?chs=500x500&cht=qr&chl=".$qr_json style="width:150px; height: 150px;"></qr>
+
                         	<!-- 戻る -->
                         	<div class="main">
 
                         			<p>
-										<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る"  ></a>
+									<!--<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る"  ></a>-->
                         			</p>
                         	</div>
                         </body>

@@ -38,6 +38,7 @@ class HomeController extends Controller
       $user = Auth::user();
       //
       $data = Config::where('user_id', $user->id)->first();
+  
 
       //APIレート
         $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
