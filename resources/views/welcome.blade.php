@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <img src="/ステッカー.png" style="width:150px; height:150px;">
-        <img src="/伝票.png" style="width:150px; height:150px">
+        <img src="/ステッカー.png" style="width:1200px; height:800px;">
+        <img src="/伝票.png" style="width:1200px; height:800px">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">

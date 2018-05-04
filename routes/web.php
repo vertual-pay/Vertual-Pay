@@ -25,10 +25,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/account', 'HomeController@account');
 //決済履歴
 Route::get('/history', 'HomeController@history');
-//QRコード
-Route::get('/qr', 'HomeController@qr');
+//QRコード発行する
+Route::post('/account', 'HomeController@qrcode');
+
 //その他ページ
-Route::get('/other', 'HomeController@other');
+Route::get('/other', function(){
+  return view('other');
+});
 //設定ログイン
 Route::get('/signin',[
   'uses' => 'ConfigController@getSignin',
