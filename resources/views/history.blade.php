@@ -13,20 +13,19 @@
       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($curl);
-      $address = json_decode($response, JSON_PRETTY_PRINT);?>
+      $address = json_decode($response, JSON_PRETTY_PRINT);
+      ?>
 
 <table border="2">
     <tr>
-      <th>XEM料金</th>
-      <th>決済時間</th>
-      <th>送金した公開鍵</th>
-      <th>メッセージ(固定メッセージ,当時のレート、伝票番号など)<th>
+      <th>日時</th>
+      <th>XEM</th>
+      <th>アドレス</th>
     </tr>
 <tr>
-    <td>{{$result["data"][$i]["transaction"]["amount"]}}</td>
     <td><?php echo date( "Y年 m月d日 h時m分s秒",$timestamp) ?></td>
+    <td>{{$result["data"][$i]["transaction"]["amount"]}}</td>
     <td>{{$address["account"]["address"]}}</td>
-    <td>{{$result["data"][$i]["transaction"]["signature"]}}
   </tr>
   </table>
 @endfor
