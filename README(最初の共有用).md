@@ -30,20 +30,21 @@ git add contributors.txt
 git commit -m "first commit"
 git push -u origin master
 ```
+
+#X-serverでのgit pull 
+cd ~
+cd develop 
+cd Vertual-Pay
+git init 
+git remote add origin https://github.com/vertual-pay/Vertual-Pay.git
+(もしかしたら、already exitsになるかもしれない。そしたら飛ばす)
+git pull origin master
+
+::::
+Sccess fullyとでたらおk
+
 # Route設定
-
-サイトトップ→get /
-ユーザー用新規登録 post /register
-送信完了画面 get /maildone
-パスワード設定  post /edit/:id
-ログイン post /login 
-忘れた場合  post  /loginforget
-利用規約 get  /rule  
-
-メインページ get /main/:id
-会計 get /main/:id/balance 
-設定　update /main/:id/config
-その他　get /main/:id/
+/ 
 
 
 
