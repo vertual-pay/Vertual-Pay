@@ -1,8 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
 <!--phpで変数持ってきた-->
-<h1>決済履歴</h1>
+<h1 class="history-name">取引履歴</h1>
+<div class ="table-body">
+<table border="2" class="table1">
+    <tr>
+      <th>日時</th>
+      <th>アドレス</th>
+      <th>XEM</th>
+    </tr>
+  </table>
+</div>
 @for ($i = 0; $i < 10; $i++)
 <?php $timestamp = $result["data"][$i]["transaction"]["timeStamp"] + 1427555185;
       $public_key = $result["data"][$i]["transaction"]["signer"];
@@ -15,20 +25,17 @@
       $response = curl_exec($curl);
       $address = json_decode($response, JSON_PRETTY_PRINT);
       ?>
-
-<table border="2">
-    <tr>
-      <th>日時</th>
-      <th>XEM</th>
-      <th>アドレス</th>
-    </tr>
+      <div class ="table-body">
+<table border="2" class="table1">
 <tr>
     <td><?php echo date( "Y年 m月d日 h時m分s秒",$timestamp) ?></td>
-    <td>{{$result["data"][$i]["transaction"]["amount"]}}</td>
     <td>{{$address["account"]["address"]}}</td>
+    <td>{{$result["data"][$i]["transaction"]["amount"]}}</td>
   </tr>
   </table>
+</div>
 @endfor
+
 
 
 @endsection

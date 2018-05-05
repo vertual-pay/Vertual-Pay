@@ -224,3 +224,27 @@
 .txt-contentsss,.accountancyyy{
   display:inline-block;
 }
+
+.table1{
+  width: 80%;							/* 要素の横幅を指定する */
+	line-height: 2em;					/* 行の高さを指定する */
+	border-collapse: collapse;;			/* 隣接するセルの罫線を離して表示する */
+	font-family: "メイリオ", sans-serif;/* フォントのスタイルを指定する */
+	font-size: 12.5px;					/* フォントのサイズを指定する */
+	font-weight: bold;
+  border-spacing: 1px 0;				/* フォントの太さを指定する */
+}
+td,th{
+  padding:10px;
+  width:40%;
+  table-layout: fixed;
+}
+/*padding-leftで/historyのテーブルの位置を調節できます。*/
+.table-body{
+  padding-left: 90px;
+  table-layout: fixed;
+}
+.history-name{
+  color: #47bcad;
+  padding-left: 40%;
+}
