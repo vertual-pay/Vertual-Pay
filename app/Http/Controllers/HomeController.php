@@ -30,7 +30,9 @@ class HomeController extends Controller
     //トップページ
     public function index()
     {
-        return view('home');
+      $id = Auth::id();
+      $exist = Config::where('user_id', $id)->exists();
+        return view('home',compact('exist'));
     }
 //会計処理
     public function account()

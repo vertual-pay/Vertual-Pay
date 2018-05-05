@@ -4,11 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
 
-  
+      @if(isset($exist))
+      <h1>設定ページでXEMアドレスを登録してください</h1>
+      @endif
 
                                   <!-- タブ3つ	 -->
               		<div class="tabs">
-              			<a href="/account">
+              			<a href="/account" >
                           <div class="tab">
                           <h2 class="txt-contents">会計</h2>
                           <div class="accountancy">
