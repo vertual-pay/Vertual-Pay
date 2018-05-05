@@ -31,9 +31,13 @@
 			<a href="/history"><h5>決済履歴を確認する</h5></a>
 		</div>
 		<!-- 決済履歴ここまで-->
+    <!-- 戻る -->
+			<p>
+				<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る" ></a>
+			</p>
 
 		<!-- ステッカー -->
-		<h3>ステッカー</h3>
+		<!--<h3>ステッカー</h3>
 		<div class="Sticker">
 			<p class="description">Virtual Payは仮想通貨の決済インフラを拡大するために、ステッカーをご用意しています。<br>
 			お店の入口、レジ前などに貼っていただけると幸いです。
@@ -45,21 +49,17 @@
 			<h5>Illustrator</h5>
 				<input type="button" value="ダウンロード" href="" class="btn btn-primary-set">
 				<p>※印刷会社へご依頼ください。</p>
-		</div>
+		</div> -->
 
 
 		<!-- ステッカーここまで -->
 
 		<!-- オリジナル請求書 -->
 
-
-
 		<!-- オリジナル請求書ここまで -->
 
 		<!-- 戻る -->
-			<p>
-				<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る" ></a>
-			</p>
+		
 	</div>
 </body>
 </div>

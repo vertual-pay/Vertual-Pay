@@ -11,9 +11,9 @@ use Image;
 
 
 class ConfigController extends Controller
-{
-  public function getSignup(){
-      return View('config.signup');
+{public function getSignup(){
+
+  return View('config.signup');
    }
 
   public function postSignup(Request $request){
@@ -41,7 +41,10 @@ class ConfigController extends Controller
     //ログイン
   public function getSignin()
     {
-      return view('config.signin');
+      $id = Auth::id();
+      $exist= Config::where('user_id', $id)->exists();
+
+      return view('config.signin',compact('exist'));
     }
 //アドレスとログ
   public function postSignin(Request $request)

@@ -35,6 +35,7 @@
   </table>
 </div>
 @endfor
+  <a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る" ></a>
 
 
 
