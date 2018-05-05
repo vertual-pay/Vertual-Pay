@@ -79,12 +79,12 @@ class RegisterController extends Controller
     // registerメソッドをオーバーライド
     public function register(Request $request)
     {
-        // validation
-        $validator = $this->validator($request->all());
-        if ($validator->fails())
-        {
-            $this->throwValidationException($request, $validator);
-        }
+      // validation
+       $validator = $this->validator($request->all());
+       if ($validator->fails())
+       {
+           $this->throwValidationException($request, $validator);
+       }
 
         // DBトランザクションを利用する
         DB::beginTransaction();

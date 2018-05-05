@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
 
+  
 
                                   <!-- タブ3つ	 -->
               		<div class="tabs">

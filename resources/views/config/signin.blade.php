@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-      
+    
 
   <div class="card-header--">{{ __('設定ログイン') }}</div>
   @if(count($errors) >0)
@@ -27,7 +27,7 @@
   </div>
   <button type="submit" class="btn btn-primary-set">ログイン</button>
   </form>
-  <a class="notyet" href="http://127.0.0.1:8000/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
+  <a class="notyet" href="/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
 
   </div>
 </div>
