@@ -31,13 +31,10 @@
                         		<!-- 合計金額入力 -->
                             <div class="summ">
                             <h3>合計金額を入力してください</h3>
-<<<<<<< HEAD
-                        		<input name="amount"><p>XEM<p></div>
 
-=======
                         		<input name="amount">円
 　　　　　　　　　　　　　　　　　　</div>
->>>>>>> 11a19d1e2fdf9563e7a338fba8f337d9bc47a661
+
 
 
 
