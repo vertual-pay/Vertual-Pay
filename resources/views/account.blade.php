@@ -24,15 +24,14 @@
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
-                        		<div class="rate">
-                        			<p>レート <?php echo round($rate,2)?>JPY(USD)/XEM</p>
-                            <p>アドレス {{$data->address}}</p>
-                        		</div>
-                                <div onclick="confirm()"><input type="submit" value="QRコードを発行する"></div>
+
+                                <input type="submit" onClick = "confirm()" value="QRコードを発行する">
                                 <!-- Javascriptで確認 -->
                               <script type="text/javascript">
+
                         function confirm(){
-                          amount = document.getElementById("amount").value;
+                          var amount = document.getElementById("amount").value;
+                          var account_number = document.getElementById("account_number").value;
                           console.log(amount);
                           if(amount.value != null)
                   window.alert('QR発行に行こうします。')

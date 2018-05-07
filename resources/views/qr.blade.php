@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<?php $xem_price = $xem_price / 1000000;?>
+
 @if(isset($qr_json))
 <figure class="flame">
   <h1 class ="on-flame-account">お会計</h1>
@@ -15,6 +15,6 @@
  <p>店名: {{$user->name}}</p>
 </figcaption>
 </figure>
-<a href="/acount"><input class="on-flame-return btn btn-primary-set"  type="button" value="戻る"></a>
+<a href="/account"><input class="on-flame-return btn btn-primary-set"  type="button" value="戻る"></a>
 @endif
 @endsection

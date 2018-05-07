@@ -73,6 +73,7 @@ class HomeController extends Controller
       $response = curl_exec($curl);
       $result = json_decode($response, JSON_PRETTY_PRINT);
 
+
   //決済処理を行なっていない場合、APIを取ってこれないので、そのエラーに対処するため条件分岐した。
   if(empty($result["data"])){
     return view('history');
@@ -85,34 +86,41 @@ class HomeController extends Controller
     public function qrcode(Request $request)
     {
       //伝票番号
-        $account_number = $request->account_number;
-      //APIレート XEM/doller
-        $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
-        $json = file_get_contents($base_url);
-        $json = json_decode($json, JSON_PRETTY_PRINT);
-        $price_xem = $json[0]["price_usd"];
+      $account_number = $request->account_number;
+      //APIレート USD/XEM
+      $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
+      $json = file_get_contents($base_url);
+      $json = json_decode($json, JSON_PRETTY_PRINT);
+      $price_xem = $json[0]["price_usd"];
 
-     //日本円 doller/jpy
-        $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
-        $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
-        $price_jpy = $japanese_json["JPY"];
+
+     //日本円  JPY/USD
+      $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
+      $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
+      $price_jpy = $japanese_json["JPY"];
 
 //支払うべき金額をリクエスト
-        $amount = $request->amount;
-//xem/jpyを算出
-        $rate = $price_jpy * $price_xem;
+      $amount = $request->amount;
+//xem/jpyを算出 １円あたりのXEMの料金
+      $rate =  $price_xem * $price_jpy;
+      $rate = 1 / $rate;
+
        //支払う額をXEMの価格に換算する
-        $xem_price = $amount * $rate;
+      $xem_price = $amount * $rate;
+
+       //ブロックチェーンに載せるときは、100000倍にしなければならない
+
+
+
 
       //ユーザー情報取得
       $user = Auth::user();
       $data = Config::where('user_id', $user->id)->first();
-
       //JSON構造に直す。
-      $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price, "msg" => "お店の名前".$user->name."からメッセージ: ".$data->message." 伝票番号:".$account_number." 当時のレート:".$rate."xem/jpy", "name" => "Vertual-Pay") );
+      $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" => "お店の名前".$user->name."からメッセージ: ".$data->message." 伝票番号:".$account_number." 当時のレート:".$rate."xem/jpy", "name" => "Vertual-Pay") );
       $qr_json = json_encode($qr_json);
 
-      return view('qr',compact('data', 'amount','user','qr_json','xem_price','account_number'));
+      return view('qr',compact('data', 'amount','user','qr_json','xem_price','account_number','send'));
     }
 
 }
