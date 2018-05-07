@@ -32,8 +32,8 @@
                             <div class="summ">
                             <h3>合計金額を入力してください</h3>
 
-                        		<input name="amount">円
-　　　　　　　　　　　　　　　　　　</div>
+                        		<input name="amount"><p>XEM<p></div>
+　　　　　　　　　　　　　　　　　
 
 
 
@@ -41,9 +41,11 @@
                         		<!-- 合計金額入力ここまで-->
                  @if(isset($data))
                         		<!-- レート -->
-                        		<h3>レート
+                        		<div class="raterate">
+                              <h3></h3>
                         		<div class="rate">
-                        			<p>JPY(USD)/XEM<?php echo round($rate,2)?></p>
+                        			<p>レート
+                                JPY(USD)/XEM<?php echo round($rate,2)?></p>
                             <p>アドレス
                               {{$data->address}}</p>
                         		</div>
@@ -51,15 +53,15 @@
                 @else
                 <h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3>
                 @endif
+              </div>
                         		<!-- レート -->
                         		<!-- 合計金額 -->
-
+<div class="sumsum">
   <h3>支払金額</h3>
-                        		<div class ="sum">
 
                         				<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
                         				<p>XEM</p>
-                        		</div>
+                          </div>
                         		<!-- 合計金額ここまで -->
                         		<!-- QR -->
                             @if(isset($qr_json))

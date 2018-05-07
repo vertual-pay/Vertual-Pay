@@ -263,19 +263,32 @@
   top:30px;
 }
 .summ{
-  position:relative;
-  left:-175px;
-  top:50px;
+  position:absolute;
+  left:500px;
+  top:230px;
 }
 .summ input{
-  position: relative;
+  position: absolute;
   left:30px;
-  top:20px;
+  top:270px;
 }
 .summ p{
-  position: relative;
-  left:330px;
-  top:-20px;
+  position: absolute;
+  left:350px;
+  top:285px;
+}
+.raterate{
+  position: absolute;
+  left:500px;
+  top:550px;
+}
+.sumsum{
+  position: absolute;
+  left:500px;
+  top:400px;
+}
+.sumsum p{
+  color:#000;
 }
 .inputt{
   position:relative;
@@ -692,9 +705,14 @@ td,th{
   border-color: #000;
 }
 .history{
-  position: relative;
-  top:100px;
-  left:0px;
+  position: absolute;
+  top:350px;
+  left:500px;
+}
+.history h5{
+  position: absolute;
+  top:10px;
+  left:-280px;
 }
 .historycheck{
   position: absolute;
