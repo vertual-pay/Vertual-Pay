@@ -2,46 +2,40 @@
 
 @section('content')
 
-    <div class="row justify-content-center">
+    <div class="justify-content-center">
 
 
           {{Form::open(array('action' => 'HomeController@qrcode', 'method' => 'post'))}}
 
-                          <div class="tabtab">
+                          <div class="tabtabtab">
                             <h2 class="txt-contentsss">会計</h2>
-                            <p class="input">※伝票番号を入力できます。
-                            <br>
-                            ※ニックネームを入力すると会費などの集計が楽になります。<br>
-                            ※設定した固定メッセージも表示されます。<br>
-                          </p>
 
-                          @if(isset($user))
-                                   <img src="/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-left:25px;">
-                                  {{$user->name}}の会計
-                                  @endif
+
 
 <div class="message">
                                                   <!-- メッセージ入力 -->
                         		<h3>伝票番号を入力してください</h3>
-                            <div class="message">
-                        		<input name="pay" method="get">
+
+                        		<input class="numbermesssage" name="pay" method="get">
+                            <p class="input">
+                            ※設定した固定メッセージも表示されます。
+                          </p>
                           </div>
 
 
 
 
+
                         		<!-- メッセージ入力ここまで -->
-                            <div class="row justify-content-center">
+                            <div class="justify-content-center">
                         		<!-- 合計金額入力 -->
                             <div class="summ">
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount">XEM</div>
+                        		<input name="amount"><p>XEM<p></div>
 
 
 
-                        		<div class="JPY">
-                        			<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
-                        		</div>
+
                         		<!-- 合計金額入力ここまで-->
                  @if(isset($data))
                         		<!-- レート -->
@@ -68,11 +62,14 @@
                         		<!-- QR -->
                             @if(isset($qr_json))
                           {!!QrCode::size(300)->generate($qr_json);!!}
+                          <img src="/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-left:25px;">
+                         {{$user->name}}の会計
                           @endif
                           {{Form::close()}}
+
                         	<!-- 戻る -->
                         	<div class="main">
-									<a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る"></a>
+									<a href="/home"><input class="returnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
                         	</div>
                         </body>
                         </div>
