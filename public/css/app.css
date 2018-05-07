@@ -422,31 +422,29 @@
   font-size: 20px;
   z-index: 3;
   border-color: #000;
-=======
-
-.table1{
+}
+.table1 {
   width: 80%;							/* 要素の横幅を指定する */
 	line-height: 2em;					/* 行の高さを指定する */
 	border-collapse: collapse;;			/* 隣接するセルの罫線を離して表示する */
 	font-family: "メイリオ", sans-serif;/* フォントのスタイルを指定する */
-	font-size: 12.5px;					/* フォントのサイズを指定する */
+	font-size: 15px;					/* フォントのサイズを指定する */
 	font-weight: bold;
   border-spacing: 1px 0;				/* フォントの太さを指定する */
 }
 td,th{
-  padding:10px;
+  padding:20px;
   width:40%;
   table-layout: fixed;
 }
 /*padding-leftで/historyのテーブルの位置を調節できます。*/
 .table-body{
-  padding-left: 90px;
+  padding-left: 100px;
   table-layout: fixed;
 }
 .history-name{
   color: #47bcad;
   padding-left: 40%;
->>>>>>> temp1
 }
 .welcomepage h3{
   font-size: 28px;
