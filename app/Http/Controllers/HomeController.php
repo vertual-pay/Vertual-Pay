@@ -106,7 +106,7 @@ class HomeController extends Controller
       $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $amount, "msg" => "お店の名前".$user->name."からメッセージ".$data->message."伝票番号".$request->pay."当時のレート番号".$rate, "name" => "Vertual-Pay") );
       $qr_json = json_encode($qr_json);
 
-      return view('/account',compact('data', 'rate','price_jpy','user','qr_json'));
+      return view('qr',compact('data', 'rate','price_jpy','user','qr_json'));
     }
 
 }
