@@ -71,6 +71,10 @@ class HomeController extends Controller
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($curl);
       $result = json_decode($response, JSON_PRETTY_PRINT);
+
+
+
+
   if(empty($result["data"])){
     return view('history');
   }

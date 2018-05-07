@@ -101,7 +101,9 @@ class ConfigController extends Controller
      }
         if(isset($request->config_password))$data->config_password = $request->config_password;
         if(isset($request->message))$data->message = $request->message;
-        if(isset($request->address))$data->address = $request->address;
+        if(isset($request->address))
+        $address = str_replace('-', '',$request->address);
+        $data->address = $address;
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
