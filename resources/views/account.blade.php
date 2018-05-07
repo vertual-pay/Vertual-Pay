@@ -5,82 +5,64 @@
     <div class="justify-content-center">
 
 
-          {{Form::open(array('action' => 'HomeController@qrcode', 'method' => 'post'))}}
 
-                          <div class="tabtabtab">
-                            <h2 class="txt-contentsss">会計</h2>
-
-
-
-<div class="message">
-                                                  <!-- メッセージ入力 -->
-                        		<h3>伝票番号を入力してください</h3>
-
-                        		<input class="numbermesssage" name="pay" method="get">
-                            <p class="input">
-                            ※設定した固定メッセージも表示されます。
-                          </p>
-                          </div>
+          <form method="POST" action="{{action('HomeController@qrcode')}}" accept-charset="UTF-8">
+{{ csrf_field() }}
+                           <div class="tabtabtab">
+  <h2 class="txt-contentsss">会計</h2>
 
 
 
-
-
-                        		<!-- メッセージ入力ここまで -->
-                            <div class="justify-content-center">
-                        		<!-- 合計金額入力 -->
-                            <div class="summ">
+    <div class="message">
+    <h3>伝票番号を入力してください</h3>
+      <input name="pay" id="pay">
+<p class="inputtt">※設定した固定メッセージも表示されます。</p>
+  </div>
+            <div class="justify-content-center">
+                        <div class="summ">
                             <h3>合計金額を入力してください</h3>
-
-                        		<input name="amount"><p>XEM<p></div>
-　　　　　　　　　　　　　　　　　
-
-
-
-
-                        		<!-- 合計金額入力ここまで-->
-                 @if(isset($data))
+                        		<input name="amount" id="amount"><p>XEM<p>
+            </div>
+@if(isset($data))
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
                         		<div class="rate">
-                        			<p>レート
-                                JPY(USD)/XEM<?php echo round($rate,2)?></p>
-                            <p>アドレス
-                              {{$data->address}}</p>
+                        			<p>レート <?php echo round($rate,2)?>JPY(USD)/XEM</p>
+                            <p>アドレス {{$data->address}}</p>
                         		</div>
+                                <input type="submit" value="QRコードを発行する" onclick="confirm()">
+                              <script type="text/javascript">
 
-                                <input type="submit" value="QRコードを発行する">
-                @else
+                              function confirm(){
+                                var pay = getElementById('pay').value;
+                                var amount = getElementById('amount').value;
+
+                                pay = Number(pay);
+                                amount = Number(pay);
+
+                                alert("伝票番号:"+ pay + "\n支払い金額"　+ amount);
+                              }
+                              </script>
+@else
                 <h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3>
-                @endif
+@endif
               </div>
-                        		<!-- レート -->
-                        		<!-- 合計金額 -->
+              @csrf
+            </form>
 <div class="sumsum">
   <h3>支払金額</h3>
-
-                        				<p>JPY(USD)<?php echo round($price_jpy,2)?></p>
-                        				<p>XEM</p>
-                          </div>
-                        		<!-- 合計金額ここまで -->
-                        		<!-- QR -->
-                            @if(isset($qr_json))
-                          {!!QrCode::size(300)->generate($qr_json);!!}
-                          <img src="/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-left:25px;">
-                         {{$user->name}}の会計
-                          @endif
-                          {{Form::close()}}
-
-                        	<!-- 戻る -->
-                        	<div class="main">
-									<a href="/home"><input class="returnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
-                        	</div>
-                        </body>
-                        </div>
-</div>
-
+<p>
+  JPY(USD)<?php echo round($price_jpy,2)?>
+</p>
+<p>XEM</p>
+       </div>
+      <div class="main">
+			<a href="/home"><input class="returnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
+    </div>
   </div>
+ </div>
+</div>
 
 
 @endsection

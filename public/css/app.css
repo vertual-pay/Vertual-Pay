@@ -242,7 +242,7 @@
   top:900px;
   text-align: center;
 }
-.numbermesssage{
+.messsage{
   position: absolute;
   top:300px;
   left:530px;
@@ -252,7 +252,7 @@
   top:100px;
   left:-100px;
 }
-.input{
+.message inputtt{
   position: absolute;
   left:500px;
   top:380px;
@@ -312,7 +312,7 @@
 .txt-contentsss,.accountancyyy{
   display:inline-block;
 }
-<<<<<<< HEAD
+
 .welcomepage h3{
   font-size: 28px;
 }
