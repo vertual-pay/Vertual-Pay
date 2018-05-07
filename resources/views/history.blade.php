@@ -3,7 +3,9 @@
 @section('content')
 
 <!--phpで変数持ってきた-->
-@if(isset($result))
+@if(empty($result))
+<div style="margin-left:500px;"><h1>決済処理がされておりません</h1></div>
+@else
 <h1 class="history-name">取引履歴</h1>
 <div class ="table-body">
 <table border="2" class="table1">
@@ -37,8 +39,7 @@
 </div>
 @endfor
   <a href="/home"><input class="return btn btn-primary-set" type="button" value="トップページへ戻る" ></a>
-  @else
-  <h1>決済処理がされておりません</h1>
+
   @endif
 
 

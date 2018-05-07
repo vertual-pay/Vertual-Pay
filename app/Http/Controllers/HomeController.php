@@ -71,10 +71,16 @@ class HomeController extends Controller
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($curl);
       $result = json_decode($response, JSON_PRETTY_PRINT);
-      dd($result);
 
 
+
+
+  if(empty($result["data"])){
+    return view('history');
+  }
+  else{
         return view('history',compact('result'));
+      }
 
     }
 //QRコード発行

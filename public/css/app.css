@@ -133,7 +133,7 @@
   }
   .tabtab {
       margin:10px 0px 0px 500px;
-      height:1000px;
+      height:700px;
       font-weight: bold;
       color: #6AB0E0;/*文字色*/
       background: #f5f8fa;
@@ -166,11 +166,26 @@
   .tabtab h3{
       text-align:left;
       padding-left: 30px;
-      margin-top:110px;
+      margin-top:210px;
       font-weight:normal;
       font-size:20px;
       color:#60CBC1;
   }
+.receiveadress{
+      position: absolute;
+      left:500px;
+      top:00px;
+}
+.history{
+      position: absolute;
+      left:500px;
+      top:350px;
+}
+.history h5{
+      position: absolute;
+      left:21px;
+      width:180px;
+}
 
 .QR{
   margin:100px;
@@ -185,7 +200,7 @@
   color: #FFF;
   position:absolute;
   left:490px;
-  top:875px;
+  top:600px;
   text-align: center;
 }
 .handmessage{
@@ -620,7 +635,11 @@ td,th{
 .history{
   position: relative;
   top:100px;
-  left:-225px;
+  left:0px;
+}
+.historycheck{
+  position: absolute;
+  left:300px;
 }
 .Sticker{
   position: relative;
