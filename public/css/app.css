@@ -501,22 +501,22 @@
 
 /*--決済履歴--*/
 .table1 {
-  width: 80%;							/* 要素の横幅を指定する */
-	line-height: 2em;					/* 行の高さを指定する */
+  width: 100%;							/* 要素の横幅を指定する */
+	line-height: 1em;					/* 行の高さを指定する */
 	border-collapse: collapse;;			/* 隣接するセルの罫線を離して表示する */
 	font-family: "メイリオ", sans-serif;/* フォントのスタイルを指定する */
-	font-size: 15px;					/* フォントのサイズを指定する */
+	font-size: 7px;					/* フォントのサイズを指定する */
 	font-weight: bold;
   border-spacing: 1px 0;				/* フォントの太さを指定する */
 }
 td,th{
-  padding:20px;
+  padding:10px;
   width:40%;
   table-layout: fixed;
 }
 /*padding-leftで/historyのテーブルの位置を調節できます。*/
 .table-body{
-  padding-left: 100px;
+  padding-left: 30px;
   table-layout: fixed;
 }
 .history-name{
