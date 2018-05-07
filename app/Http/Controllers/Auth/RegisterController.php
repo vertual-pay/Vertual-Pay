@@ -83,7 +83,8 @@ class RegisterController extends Controller
        $validator = $this->validator($request->all());
        if ($validator->fails())
        {
-           $this->throwValidationException($request, $validator);
+           request()->session()->flash('message', '他のパスワードを入力してください');
+           return redirect('register');
        }
 
         // DBトランザクションを利用する
