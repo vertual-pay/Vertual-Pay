@@ -25,8 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/account', 'HomeController@account');
 //決済履歴
 Route::get('/history', 'HomeController@history');
-//会計処理
-Route::post('/account', 'HomeController@qrcode');
 //QRコード
 Route::post('/qr', 'HomeController@qrcode');
 

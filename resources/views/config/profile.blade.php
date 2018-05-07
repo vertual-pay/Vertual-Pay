@@ -5,13 +5,13 @@
 <form enctype="multipart/form-data" action = "{{route('config.profile')}}" method="post" class="form-horizontal" style="margin-top: 50px;">
     <div class="tabtab">
 　<h1>設定ページ</h1>
-    <p><input type="file" name="avatar" style="float: margin-right:50px;"></p>
+    <p><input type="file" name="avatar" style=" margin-right:50px;"></p>
       <p> お店の名前 : {{$user->name}}</p>
       <p> お店のメールアドレス: {{$user->email}}</p>
       <form>
         <input type ="button" value="ユーザー情報を変更する" style="font-size:15px; " onclick="user(0)">
       </form>
-      <div id=user style="visibility: hidden" onclick="user(0)">
+      <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
           <p><input type="text" name="email"  placeholder="メールアドレス変更"></p>
       </div>
