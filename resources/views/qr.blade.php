@@ -6,7 +6,7 @@
   <h1 class ="on-flame-account">お会計</h1>
   <div class="on-flame-qr">{!!QrCode::size(350)->generate($qr_json);!!}</div>
 <img src="/avatars/{{ $user->avatar }}" class="on-flame-avatar"style="width:180px; height:180px; float:left; border-radius:50%; margin-left:25px;">
-<img src="/フレーム1.png">
+<img src="/frame.png">
  <figucaption class="on-flame-text">
  <p>伝票番号{{$account_number}}<p>
  <p>¥ <?php echo number_format($amount) ?></p>
