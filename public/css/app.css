@@ -497,6 +497,9 @@
   z-index: 3;
   border-color: #000;
 }
+
+
+/*--決済履歴--*/
 .table1 {
   width: 80%;							/* 要素の横幅を指定する */
 	line-height: 2em;					/* 行の高さを指定する */
@@ -520,6 +523,9 @@ td,th{
   color: #47bcad;
   padding-left: 40%;
 }
+/*--決済履歴--*/
+
+
 .welcomepage h3{
   font-size: 28px;
 }
@@ -725,3 +731,37 @@ td,th{
 .Sticker p{
   margin-top: -80px;
 }
+
+
+/*QRコード*/
+.flame{
+  position:relative;
+  left:160px;
+}
+.on-flame-qr{
+  position:absolute;
+  top:270px;
+  left:100px;
+}
+.on-flame-avatar{
+  position:absolute;
+  top:70px;
+  left:160px;
+}
+.on-flame-account{
+  position:absolute;
+  padding-left: 30%;
+  padding-top: 25px;
+  font-size: 60px;
+}
+.on-flame-text{
+  position: absolute;
+  left:500px;
+  font-size:35px;
+  top:150px;
+}
+.on-flame-return{
+  position:absolute;
+  transform: translate(100%,750%);
+}
+/*QRコード*/
