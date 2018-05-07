@@ -13,13 +13,11 @@
 
 
 
-                           <div class="message">
-                            <!-- メッセージ入力 -->
+    <div class="message">
     <h3>伝票番号を入力してください</h3>
-      <input class="numbermesssage" name="pay" id="pay">
-<p class="input">
-  ※設定した固定メッセージも表示されます。
-</p></div>
+      <input name="pay" id="pay">
+<p class="inputtt">※設定した固定メッセージも表示されます。</p>
+  </div>
             <div class="justify-content-center">
                         <div class="summ">
                             <h3>合計金額を入力してください</h3>
