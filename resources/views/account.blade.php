@@ -49,7 +49,8 @@
                             <p>アドレス
                               {{$data->address}}</p>
                         		</div>
-                                {{Form::submit('QRコードを発行する')}}
+
+                                <input type="submit" value="QRコードを発行する">
                 @else
                 <h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3>
                 @endif
