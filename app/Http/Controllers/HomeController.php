@@ -73,8 +73,6 @@ class HomeController extends Controller
       $result = json_decode($response, JSON_PRETTY_PRINT);
 
 
-
-
   if(empty($result["data"])){
     return view('history');
   }

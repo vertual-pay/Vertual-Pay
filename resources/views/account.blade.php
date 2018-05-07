@@ -35,7 +35,8 @@
                         		<!-- 合計金額入力 -->
                             <div class="summ">
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount">XEM</div>
+                        		<input name="amount">円
+　　　　　　　　　　　　　　　　　　</div>
 
 
 
