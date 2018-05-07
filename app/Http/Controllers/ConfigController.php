@@ -20,21 +20,32 @@ class ConfigController extends Controller
   // バリデーション
   $this->validate($request,[
     'config_password' => 'required|min:4',
-    'address' => 'required'
+    'address' => 'required|alpha_dash'
   ]);
+  //APIレート
+    $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
+    $json = file_get_contents($base_url);
+    $json = json_decode($json, JSON_PRETTY_PRINT);
+    $price_usd = $json[0]["price_usd"];
+ //日本円
+    $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
+    $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
+    $price_jpy = $japanese_json["JPY"];
 
+    //APIレート　* 日本円
+    $rate = $price_jpy * $price_usd;
   // DBインサート
-  $id = Auth::id();
+  $user = Auth::user();
   $address = $request->address;
   //設定モデル
-  $config= Config::where('user_id', $id)->first();
+  $config= Config::where('user_id', $user->id)->first();
 
   //公開鍵のハイフンを消す。
   $address = str_replace('-', '',$address);
   $password = $request->config_password;
-  $config = new Config(['address' => $address, 'user_id' => $id, 'config_password' => $password]);
+  $config = new Config(['address' => $address, 'user_id' => $user->id, 'config_password' => $password]);
   $config->save();
-  return view('config.profile',compact('config'));
+  return view('config.profile',compact('config','user','rate'));
 
 }
 
