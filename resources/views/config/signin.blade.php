@@ -13,7 +13,7 @@
   </div>
   @endif
   @if(empty($exist))
-  <a href="/config/signup"><b style="font-size:50px;">設定ページでXEMアドレスを登録してください</b></a>
+  <a href="/config/signup"><b style="font-size:26px; color: red;">XEMアドレスが登録されておりません。設定ページでXEMアドレスを登録してください</b></a>
   @endif
   <form action="{{ route('config.signin') }}" method="post" style="margin-top: 50px;">
     {{ csrf_field() }}
