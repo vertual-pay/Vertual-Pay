@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
 
-      @if(isset($exist))
-      <h1>設定ページでXEMアドレスを登録してください</h1>
+      @if(empty($exist))
+      <a href="/config/sigup"><b style= "font-size: 50px"> 設定ページで、XEMアドレスを入力してください</b></a>
       @endif
 
                                   <!-- タブ3つ	 -->

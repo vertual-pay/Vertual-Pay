@@ -128,11 +128,11 @@
     margin:100px;
     color: #6AB0E0;
     position:absolute;
-    left:488px;
-    top:350px;
+    left:350px;
+    top:500px;
   }
   .tabtab {
-      margin:10px 10px 0px 10px;
+      margin:10px 0px 0px 500px;
       height:1000px;
       font-weight: bold;
       color: #6AB0E0;/*文字色*/
@@ -191,12 +191,11 @@
 .handmessage{
   position:relative;
   top:100px;
-  left:-320px;
+  left:-100px;
 }
 .message{
-  position:relative;
-  left:39px;
-  top:50px;
+  left:30px;
+  top:40px;
 }
 .summ{
   position:relative;
@@ -433,4 +432,200 @@ td,th{
   color: #47bcad;
   padding-left: 40%;
 >>>>>>> temp1
+}
+.welcomepage h3{
+  font-size: 28px;
+}
+.welcomepage h4{
+  font-size: 26px;
+}
+.welcomepage h5{
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 40px;
+}
+.welcomepage p{
+  font-size: 15px;
+}
+.descriptiontop{
+  position: absolute;
+  left:47px;
+  top:147px;
+}
+.description26{
+  text-align: right;
+  position: absolute;
+  left:675px;
+  top:210px;
+  z-index: 3;
+}
+.description24{
+  text-align: center;
+  position: absolute;
+  left:226px;
+  top:700px;
+  z-index: 3;
+}
+.floatt_1{
+  position: absolute;
+  left:194px;
+  top:823px;
+}
+.floatt_2{
+  position: absolute;
+  left:520px;
+  top:823px;
+}
+.floatt_3{
+  position: absolute;
+  left:885px;
+  top:823px;
+}
+.description_1{
+  position: absolute;
+  left:194px;
+  top:1177px;
+}
+.description_2{
+  position: absolute;
+  left:520px;
+  top:1177px;
+}
+.description_3{
+  position: absolute;
+  left:885px;
+  top:1177px;
+}
+.description_4{
+  text-align: right;
+  position: absolute;
+  left:657px;
+  top:1314px;
+  z-index: 3;
+  line-height: 35px;
+}
+.descriptionn{
+  position: absolute;
+  left:520px;
+  top:1714px;
+}
+.floattt_1{
+  position: absolute;
+  left:71px;
+  top:1807px;
+}
+.floattt_2{
+  position: absolute;
+  left:393px;
+  top:1807px;
+}
+.floattt_3{
+  position: absolute;
+  left:725px;
+  top:1807px;
+}
+.floattt_4{
+  position: absolute;
+  left:1083px;
+  top:1807px;
+}
+.img1{
+  position: absolute;
+  left:121px;
+  top:1850px;
+}
+.img2{
+  position: absolute;
+  left:447px;
+  top:1850px;
+}
+.img3{
+  position: absolute;
+  left:769px;
+  top:1850px;
+}
+.img4{
+  position: absolute;
+  left:1095px;
+  top:1850px;
+}
+.floatttt_1{
+  position: absolute;
+  left:27px;
+  top:1960px;
+}
+.floatttt_2{
+  position: absolute;
+  left:361px;
+  top:1960px;
+}
+.floatttt_3{
+  position: absolute;
+  left:685px;
+  top:1960px;
+}
+.floatttt_4{
+  position: absolute;
+  left:1002px;
+  top:1960px;
+}
+.registerbutton1{
+  position: absolute;
+  width:288px;
+  height: 67px;
+  left:682px;
+  top:415px;
+  background-color: #60CBC1;
+  color:#FFF;
+  font-size: 20px;
+  z-index: 3;
+  border-color: #000;
+}
+.registerbutton2{
+  position: absolute;
+  width:410px;
+  height: 67px;
+  left:438px;
+  top:1600px;
+  background-color: #60CBC1;
+  color:#FFF;
+  font-size: 20px;
+  z-index: 3;
+  border-color: #000;
+}
+.registerbutton3{
+  position: absolute;
+  width:410px;
+  height: 67px;
+  left:438px;
+  top:2263px;
+  background-color: #60CBC1;
+  color:#FFF;
+  font-size: 20px;
+  z-index: 3;
+  border-color: #000;
+}
+.loginbutton{
+  position: absolute;
+  width:172px;
+  height: 67px;
+  left:1014px;
+  top:415px;
+  background-color: #FFF;
+  color:#60CBC1;
+  font-size: 20px;
+  z-index: 3;
+  border-color: #000;
+}
+.history{
+  position: relative;
+  top:100px;
+  left:-225px;
+}
+.Sticker{
+  position: relative;
+  top:30px;
+}
+.Sticker p{
+  margin-top: -80px;
 }
