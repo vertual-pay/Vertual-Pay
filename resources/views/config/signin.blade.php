@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-      
 
+    @if(isset($exist))
+    <h1>設定ページでXEMアドレスを登録してください</h1>
+    @endif
   <div class="card-header--">{{ __('設定ログイン') }}</div>
   @if(count($errors) >0)
   <div class="alert alert-danger">
@@ -27,7 +29,7 @@
   </div>
   <button type="submit" class="btn btn-primary-set">ログイン</button>
   </form>
-  <a class="notyet" href="http://127.0.0.1:8000/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
+  <a class="notyet" href="/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
 
   </div>
 </div>
