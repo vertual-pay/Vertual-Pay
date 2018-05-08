@@ -16,36 +16,31 @@
     <div class="message">
     <h3>伝票番号を入力してください</h3>
     <div class="accountnumber">
-      <input name="account_number" id="account_number">
+      <input name="account_number" type ="tel" id="account_number">
     </div>
   </div>
             <div class="justify-content-center">
                         <div class="summ">
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount" id="amount"><p>円<p>
+                        		<input name="amount" type="tel" id="amount"><p>円<p>
             </div>
 @if(isset($data))
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
-                                <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px;">
+                                <dev onclick="confirm()">
+                                  <input type="submit"  value="QRコードを発行する" style="margin-left:30px;">
+                                </dev>
                                 <!-- Javascriptで確認 -->
                               <script type="text/javascript">
-
                         function confirm(){
-                          var amount = document.getElementById("amount").value;
-                          var account_number = document.getElementById("account_number").value;
-                          console.log(amount);
-                          if(amount.value != null)
-                  window.alert('QR発行に行こうします。')
-                              }
-                              else{
-                                window.alert('あかんデェ');
-                              }
+                          var amount = inputTelObject.value;
+                          var account_number = inputTelObject.value;
+                          window ("内容はこちらでよろしいですか？" + "XEM料金:" + amount + "伝票番号:" + account_number);
                               </script>
 
 @else
-                  <a href="/config/sigup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
+                  <a href="/config/signup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
 @endif
               </div>
               @csrf
