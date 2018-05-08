@@ -20,8 +20,17 @@ class ConfigController extends Controller
   // バリデーション
   $this->validate($request,[
     'config_password' => 'required|min:4',
-    'address' => 'required|alpha_dash'
+    'address' => 'required|alpha_dash|between:40,46'
   ]);
+
+  //XEMアドレスがNでなければ、また登録ページに戻す
+  $validator = $this->validator($request->address);
+  if(!startsWith($validator, 'N'))
+  {
+    $request()->session()->flash('message', '正しいXEMアドレスの形式ではありません。');
+
+    return redirect('config.signup');
+  }
   //APIレート
     $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
     $json = file_get_contents($base_url);
