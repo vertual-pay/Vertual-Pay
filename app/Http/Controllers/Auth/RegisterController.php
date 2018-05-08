@@ -83,7 +83,7 @@ class RegisterController extends Controller
        $validator = $this->validator($request->all());
        if ($validator->fails())
        {
-           request()->session()->flash('message', '他のパスワードを入力してください');
+           request()->session()->flash('message', 'エラーです。もう一度入力してください');
            return redirect('register');
        }
 
@@ -108,6 +108,7 @@ class RegisterController extends Controller
             DB::rollback();
 
             $request->session()->flash('message', 'エラー！');
+
             return redirect('login');
         }
     }

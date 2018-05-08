@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
 
       @if(empty($exist))
-      <a href="/config/sigup"><b style= "font-size: 50px"> 設定ページで、XEMアドレスを入力してください</b></a>
+      <a href="/config/signup"><b style= "font-size: 50px"> 設定ページで、XEMアドレスを入力してください</b></a>
       @endif
 
                                   <!-- タブ3つ	 -->
