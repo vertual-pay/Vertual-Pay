@@ -7,7 +7,7 @@
 
 
        <div class="welcomepage">
-                  <h3 class="descriptiontop">NEM/XEM（ネム/ゼム）の仮想通貨決済でオリジナル請求書が表示できる「Virtual Pay」</h3>
+                  <h1 class="descriptiontop">NEM/XEM（ネム/ゼム）の仮想通貨決済でオリジナル請求書が表示できる「Virtual Pay」</h1>
                   <h4 class="description26">かんたんに導入できる仮想通貨決済<br>NEM/XEMの仮想通貨決済で、<br>お店のオリジナルQRコードを表示できます。</h4>
                   <h5 class="description24">Virtual PayはかんたんにオリジナルQRコードを発行できて、<br>あんしんしてアルバイトさんにお会計を任せられる仮想通貨決済ツールです。</h5>
                   <h3 class="floatt_1">①デザインできる</h3>
