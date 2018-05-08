@@ -8,6 +8,9 @@ use Auth;
 use \App\Config;
 use \App\User;
 use Image;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
+
 
 
 class ConfigController extends Controller
@@ -24,8 +27,7 @@ class ConfigController extends Controller
   ]);
 
   //XEMアドレスがNでなければ、また登録ページに戻す
-  $validator = $this->validator($request->address);
-  if(!startsWith($validator, 'N'))
+  if(!starts_with($request->address, 'N'))
   {
     $request()->session()->flash('message', '正しいXEMアドレスの形式ではありません。');
 
