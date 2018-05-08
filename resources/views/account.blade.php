@@ -22,7 +22,7 @@
             <div class="justify-content-center">
 
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount" id="amount" style="margin-left:-290px; margin-top:40px;">
+                        		<input name="amount" id="amount" style="margin-left:-240px; margin-top:40px;">
                             <div class="summ"><p>円<p>
             </div>
 @if(isset($data))
@@ -30,20 +30,7 @@
                         		<div class="raterate">
                               <h3></h3>
                                 <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
-                                <!-- Javascriptで確認 -->
-                              <script type="text/javascript">
 
-                        function confirm(){
-                          var amount = document.getElementById("amount").value;
-                          var account_number = document.getElementById("account_number").value;
-                          console.log(amount);
-                          if(amount.value != null)
-                  window.alert('QR発行に行こうします。')
-                              }
-                              else{
-                                window.alert('あかんデェ');
-                              }
-                              </script>
 
 @else
                   <a href="/config/sigup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
