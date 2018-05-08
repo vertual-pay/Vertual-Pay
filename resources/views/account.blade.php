@@ -20,15 +20,16 @@
     </div>
   </div>
             <div class="justify-content-center">
-                        <div class="summ">
+
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount" id="amount"><p>円<p>
+                        		<input name="amount" id="amount" style="margin-left:-290px; margin-top:40px;">
+                            <div class="summ"><p>円<p>
             </div>
 @if(isset($data))
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
-                                <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px;">
+                                <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
                                 <!-- Javascriptで確認 -->
                               <script type="text/javascript">
 
