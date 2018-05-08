@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="justify-content-center">
 
   <div class="card-header--">{{ __('設定ログイン') }}</div>
   @if(count($errors) >0)
