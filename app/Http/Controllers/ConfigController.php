@@ -78,6 +78,7 @@ class ConfigController extends Controller
 
  //config_passwordのUserモデルを参照。
  $data = Config::where('config_password',$config_password)->first();
+ if(isset($data)){
  $user_id = $data->user_id;
 
  $account = User::find($user_id)->first();
@@ -86,7 +87,10 @@ class ConfigController extends Controller
   //パスワードが存在しているか
  if($password){
 
-     return redirect()->action('ConfigController@getProfile');
+    return redirect()->action('ConfigController@getProfile');
+ }
+    $request()->session()->flash('message', 'パスワードが違います');
+    return redirect('config.signin');
 }
 
  }
@@ -116,7 +120,7 @@ class ConfigController extends Controller
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
-     return redirect()->action('ConfigController@getProfile');
+      redirect()->action('ConfigController@getProfile');
  }
 
  public function getProfile()
