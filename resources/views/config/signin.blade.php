@@ -19,7 +19,7 @@
     {{ csrf_field() }}
   <div class="form-group row">
   <label for="config_password" class="addressxem">設定ページ用パスワード</label>
-  <input type="text" id="config_password" name="config_password" class="signupaddress">
+  <input type="password" id="config_password" name="config_password" class="signupaddress" style="color:#000;">
 
   </div>
 

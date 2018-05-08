@@ -108,8 +108,8 @@
   margin:100px;
   color: #6AB0E0;
   position:absolute;
-  left:488px;
-  top:400px;
+  left:515px;
+  top:500px;
 }
 .addressxem
  {padding: 0px 45px 0px 75px;
@@ -128,7 +128,7 @@
     margin:100px;
     color: #6AB0E0;
     position:absolute;
-    left:350px;
+    left:515px;
     top:500px;
   }
   .tabtab {
@@ -291,6 +291,7 @@
   position: absolute;
   left:500px;
   top:400px;
+  height:10px;
 }
 .sumsum p{
   color:#000;

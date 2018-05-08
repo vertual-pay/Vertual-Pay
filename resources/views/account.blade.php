@@ -20,17 +20,25 @@
     </div>
   </div>
             <div class="justify-content-center">
-                        <div class="summ">
+
                             <h3>合計金額を入力してください</h3>
+
                         		<input name="amount" type="tel" id="amount"><p>円<p>
+
+                        		<input name="amount" id="amount" style="margin-left:-290px; margin-top:40px;">
+                            <div class="summ"><p>円<p>
+
             </div>
 @if(isset($data))
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
+
                                 <dev onclick="confirm()">
                                   <input type="submit"  value="QRコードを発行する" style="margin-left:30px;">
                                 </dev>
+                                <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
+
                                 <!-- Javascriptで確認 -->
                               <script type="text/javascript">
                         function confirm(){
@@ -47,9 +55,6 @@
             </form>
 <div class="sumsum">
   <h3>支払金額</h3>
-<p>
-  JPY(USD)<?php echo round($price_jpy,2)?>
-</p>
 <p>XEM</p>
        </div>
       <div class="main">
