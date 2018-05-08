@@ -25,7 +25,9 @@
 
   <button type="submit" class="btn btn-primary-set">ログイン</button>
   </form>
+  @if(empty($exist))
   <a class="notyet" href="/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
+  @endif
 
   </div>
 </div>
