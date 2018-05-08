@@ -53,9 +53,6 @@
             </form>
 <div class="sumsum">
   <h3>支払金額</h3>
-<p>
-  JPY(USD)<?php echo round($price_jpy,2)?>
-</p>
 <p>XEM</p>
        </div>
       <div class="main">
