@@ -31,7 +31,6 @@
                               <h3></h3>
                                 <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
 
-
 @else
                   <a href="/config/sigup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
 @endif
