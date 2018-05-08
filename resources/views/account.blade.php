@@ -23,9 +23,8 @@
 
                             <h3>合計金額を入力してください</h3>
 
-                        		<input name="amount" type="tel" id="amount"><p>円<p>
+                        		<input name="amount" id="amount" style="margin-left:-240px; margin-top:40px;">
 
-                        		<input name="amount" id="amount" style="margin-left:-290px; margin-top:40px;">
                             <div class="summ"><p>円<p>
 
             </div>
@@ -39,13 +38,6 @@
                                 </dev>
                                 <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
 
-                                <!-- Javascriptで確認 -->
-                              <script type="text/javascript">
-                        function confirm(){
-                          var amount = inputTelObject.value;
-                          var account_number = inputTelObject.value;
-                          window ("内容はこちらでよろしいですか？" + "XEM料金:" + amount + "伝票番号:" + account_number);
-                              </script>
 
 @else
                   <a href="/config/signup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>

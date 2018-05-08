@@ -8,6 +8,9 @@ use Auth;
 use \App\Config;
 use \App\User;
 use Image;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
+
 
 
 class ConfigController extends Controller
@@ -24,8 +27,7 @@ class ConfigController extends Controller
   ]);
 
   //XEMアドレスがNでなければ、また登録ページに戻す
-  $validator = $this->validator($request->address);
-  if(!startsWith($validator, 'N'))
+  if(!starts_with($request->address, 'N'))
   {
     $request()->session()->flash('message', '正しいXEMアドレスの形式ではありません。');
 
@@ -78,6 +80,7 @@ class ConfigController extends Controller
 
  //config_passwordのUserモデルを参照。
  $data = Config::where('config_password',$config_password)->first();
+ if(isset($data)){
  $user_id = $data->user_id;
 
  $account = User::find($user_id)->first();
@@ -86,7 +89,10 @@ class ConfigController extends Controller
   //パスワードが存在しているか
  if($password){
 
-     return redirect()->action('ConfigController@getProfile');
+    return redirect()->action('ConfigController@getProfile');
+ }
+    $request()->session()->flash('message', 'パスワードが違います');
+    return redirect('config.signin');
 }
 
  }
@@ -116,7 +122,7 @@ class ConfigController extends Controller
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
-     return redirect()->action('ConfigController@getProfile');
+      redirect()->action('ConfigController@getProfile');
  }
 
  public function getProfile()

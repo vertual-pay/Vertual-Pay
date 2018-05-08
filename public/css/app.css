@@ -147,7 +147,7 @@
   }
   .tabtabtab {
       margin:10px 0px 0px 500px;
-      height:1000px;
+      height:1050px;
       font-weight: bold;
       color: #6AB0E0;/*文字色*/
       background: #f5f8fa;
@@ -240,6 +240,14 @@
   position:absolute;
   left:490px;
   top:900px;
+  text-align: center;
+}
+.returnnn{
+  margin:100px;
+  color: #FFF;
+  position:absolute;
+  left:490px;
+  top:1000px;
   text-align: center;
 }
 .messsage{
@@ -513,11 +521,12 @@
 .table1 {
   width: 100%;							/* 要素の横幅を指定する */
 	line-height: 1em;					/* 行の高さを指定する */
-	border-collapse: collapse;;			/* 隣接するセルの罫線を離して表示する */
+	border-collapse: collapse;			/* 隣接するセルの罫線を離して表示する */
+  border-color: #000;
 	font-family: "メイリオ", sans-serif;/* フォントのスタイルを指定する */
 	font-size: 7px;					/* フォントのサイズを指定する */
 	font-weight: bold;
-  border-spacing: 1px 0;				/* フォントの太さを指定する */
+  border-spacing: 0.25px 0;				/* フォントの太さを指定する */
 }
 td,th{
   padding:10px;

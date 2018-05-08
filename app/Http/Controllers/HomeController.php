@@ -117,7 +117,8 @@ class HomeController extends Controller
       $user = Auth::user();
       $data = Config::where('user_id', $user->id)->first();
       //JSON構造に直す。
-      $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" => "お店の名前".$user->name."からメッセージ: ".$data->message." 伝票番号:".$account_number." 当時のレート:".$rate."xem/jpy", "name" => "Vertual-Pay") );
+      $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" =>
+      $user->name."からメッセージ：  ".$data->message." 伝票番号：".$account_number."　  当時のレート：".$rate."xem/jpy", "name" => "Vertual-Pay") );
       $qr_json = json_encode($qr_json);
 
       return view('qr',compact('data', 'amount','user','qr_json','xem_price','account_number','send'));

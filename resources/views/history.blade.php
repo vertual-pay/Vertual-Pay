@@ -11,9 +11,9 @@
 <div class ="table-body">
 <table border="2" class="table1">
     <tr>
-      <th style="width:20%;">日時</th>
-      <th style="width:25%">アドレス</th>
-      <th style="width:10%">XEM</th>
+      <th style="width:15%;">日時</th>
+      <th style="width:23%">アドレス</th>
+      <th style="width:7%">XEM</th>
       <th>メッセージ</th>
     </tr>
   </table>
@@ -35,11 +35,11 @@
       <div class ="table-body">
 <table border="2" class="table1">
 <tr>
-    <td style="width: 20%;" ><?php echo date( "Y年 m月d日 h時m分s秒",$timestamp) ?></td>
-    <td style="width: 25%;">{{$address["account"]["address"]}}</td>
-    <td style="width: 10%;" >{{$result["data"][$i]["transaction"]["amount"]}}
+    <td style="width: 15%;" ><?php echo date( "Y年 m月d日 h時m分s秒",$timestamp) ?></td>
+    <td style="width: 23%;">{{$address["account"]["address"]}}</td>
+    <td style="width: 7%; " >{{$result["data"][$i]["transaction"]["amount"]}}
     </td>
-    <td><?php
+    <td style="font-size:12px;"><?php
      if(!empty($result["data"][$i]["transaction"]["message"])){
        $type = $result["data"][$i]["transaction"]["message"]["type"];
        $message = $result["data"][$i]["transaction"]["message"]["payload"];
