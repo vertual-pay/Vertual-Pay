@@ -22,7 +22,7 @@
             <div class="justify-content-center">
 
                             <h3>合計金額を入力してください</h3>
-                        		<input name="amount" id="amount" style="margin-left:-240px; margin-top:40px;">
+                        		<input name="amount" id="amount" style="margin-left:-300px; margin-top:40px;">
                             <div class="summ"><p>円<p>
             </div>
 @if(isset($data))
@@ -40,7 +40,7 @@
             </form>
 <div class="sumsum">
   <h3>支払金額</h3>
-<p>XEM</p>
+<p>5000 XEM</p>
        </div>
       <div class="main">
 			<a href="/home"><input class="returnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>

@@ -9,7 +9,7 @@
       <p style="margin-top:200px;"> 名前 : {{$user->name}}</p>
       <p> メールアドレス: {{$user->email}}</p>
       <form>
-        <input type ="button" value="ユーザー情報を変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-430px;" onclick="user(0)">
+        <input type ="button" value="ユーザー情報を変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-380px;" onclick="user(0)">
       </form>
       <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
@@ -33,7 +33,7 @@
   現在の変動レートは<?php echo round($rate,2)?>XEM/JPY</p>
 
 <form>
-  <input type ="button" value="アドレスを変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-450px;" onclick="hyoji(0)">
+  <input type ="button" value="アドレスを変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
 </form>
 
 
