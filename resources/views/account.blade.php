@@ -6,7 +6,7 @@
 
 
 
-          <form method="POST" action="{{action('HomeController@qrcode')}}" accept-charset="UTF-8">
+          <form method="POST" name = "qr" action="{{action('HomeController@qrcode')}}" accept-charset="UTF-8">
 {{ csrf_field() }}
                            <div class="tabtabtab">
   <h2 class="txt-contentsss">会計</h2>
@@ -23,9 +23,7 @@
 
                             <h3>合計金額を入力してください</h3>
 
-                        		<input name="amount" id="amount" style="margin-left:-300px; margin-top:40px;">
-
-
+                        		<input name="amount" id="amount" style="margin-left:-240px; margin-top:40px;">
 
                             <div class="summ"><p>円<p>
 
@@ -35,10 +33,17 @@
                         		<div class="raterate">
                               <h3></h3>
 
-                                <dev onclick="confirm()">
-                                  <input type="submit"  value="QRコードを発行する" style="margin-left:30px;">
-                                </dev>
+
                                 <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
+                                <script type="text/javascript">
+                                function confirm(){
+                                  var account_number = qr.account_number.value;
+                                  var amount = qr.amount.value;
+
+                                  alert("伝票番号は" + account_number + "で、合計金額は、" + amount + "です。QRコードを発行してもよろしいでしょうか");
+
+                                }
+                                </script>
 
 
 @else
@@ -49,7 +54,7 @@
             </form>
 <div class="sumsum">
   <h3>支払金額</h3>
-<p>5000 XEM</p>
+<p>XEM</p>
        </div>
       <div class="main">
 			<a href="/home"><input class="returnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
