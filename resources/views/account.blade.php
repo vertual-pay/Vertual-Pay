@@ -16,24 +16,33 @@
     <div class="message">
     <h3>伝票番号を入力してください</h3>
     <div class="accountnumber">
-      <input name="account_number" id="account_number">
+      <input name="account_number" type ="tel" id="account_number">
     </div>
   </div>
             <div class="justify-content-center">
 
                             <h3>合計金額を入力してください</h3>
+
                         		<input name="amount" id="amount" style="margin-left:-300px; margin-top:40px;">
+
+
+
                             <div class="summ"><p>円<p>
+
             </div>
 @if(isset($data))
                         		<!-- レート -->
                         		<div class="raterate">
                               <h3></h3>
+
+                                <dev onclick="confirm()">
+                                  <input type="submit"  value="QRコードを発行する" style="margin-left:30px;">
+                                </dev>
                                 <input type="submit" onClick = "confirm()" value="QRコードを発行する" style="margin-left:30px; background-color:#2CBAAD; color:#FFF; border-radius:10px; border-color:#000;">
 
 
 @else
-                  <a href="/config/sigup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
+                  <a href="/config/signup"><h3 style="color:black; font-size:25px;"> 設定ページでXEMアドレスを設定してください</h3></a>
 @endif
               </div>
               @csrf

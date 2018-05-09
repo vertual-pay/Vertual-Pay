@@ -10,6 +10,7 @@ use \App\User;
 use Image;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
 
 
 
@@ -64,6 +65,7 @@ class ConfigController extends Controller
   public function getSignin()
     {
       $id = Auth::id();
+
       $exist= Config::where('user_id', $id)->exists();
 
       return view('config.signin',compact('exist'));
@@ -71,27 +73,18 @@ class ConfigController extends Controller
 //アドレスとログ
   public function postSignin(Request $request)
  {
+  $true = Config::where('config_password', $request->config_password)->exists();
 
- $this->validate($request,[
- 'config_password' => 'required|min:4'
- ]  );
-//設定のパスワード取得
- $config_password = $request->config_password;
-
- //config_passwordのUserモデルを参照。
- $data = Config::where('config_password',$config_password)->first();
- $user_id = $data->user_id;
-
- $account = User::find($user_id)->first();
- $password = $account->password;
-
-  //パスワードが存在しているか
- if($password){
-
-     return redirect()->action('ConfigController@getProfile');
-}
-
+  if(!empty($true)){return redirect()->action('ConfigController@getProfile');}
+ else {
+  $id = Auth::id();
+     $exist= Config::where('user_id', $id)->exists();
+     $login = 'パスワードが違います';
+   return view('config.signin',compact('exist','login'));
  }
+ }
+
+
 
  public function updateProfile(Request $request)
  {
@@ -118,7 +111,7 @@ class ConfigController extends Controller
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
-     return redirect()->action('ConfigController@getProfile');
+      redirect()->action('ConfigController@getProfile');
  }
 
  public function getProfile()

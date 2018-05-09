@@ -12,9 +12,7 @@
   @endforeach
   </div>
   @endif
-  @if(empty($exist))
-  <a href="/config/signup"><b style="font-size:26px; color: red;">XEMアドレスが登録されておりません。設定ページでXEMアドレスを登録してください</b></a>
-  @endif
+
   <form action="{{ route('config.signin') }}" method="post" style="margin-top: 100px; margin-left: -550px;">
     {{ csrf_field() }}
   <div class="form-group row">
@@ -25,10 +23,16 @@
 
   <button type="submit" class="btn btn-primary-set">ログイン</button>
   </form>
+
   @if(empty($exist))
   <a class="notyet" href="/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
   @endif
-
+  @if(empty($exist))
+  <a href="/config/signup"><b style="font-size:26px; color: red;">XEMアドレスが登録されておりません。設定ページでXEMアドレスを登録してください</b></a>
+  @endif
+  @if(isset($login))
+  <p>{{$login}}</p>
+  @endif
   </div>
 </div>
 </div>
