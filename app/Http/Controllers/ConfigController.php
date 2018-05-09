@@ -10,6 +10,7 @@ use \App\User;
 use Image;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
 
 
 
@@ -71,23 +72,23 @@ class ConfigController extends Controller
 //アドレスとログ
   public function postSignin(Request $request)
  {
-   $id = Auth::id();
+   //設定のパスワード取得
+    $config_password = $request->config_password;
+  $id = Auth::id();
+  $data = Config::where('config_password',$config_password)->first();
 
  $this->validate($request,[
- 'config_password' => 'required|min:4'
- ]  );
-//設定のパスワード取得
- $config_password = $request->config_password;
+ 'config_password' => [
+      'required',
+      'min:4',
+      Rule::exists('config')->where(function ($query) {
+        $query->where('user_id', '%$id%');
+      }),
+   ],
+ ]);
 
- //config_passwordのUserモデルを参照。
- $data = Config::where('config_password',$config_password)->first();
-
-if(is_null($data)){
-  $mention = "パスワードが間違っています";
-  return view('config.signin', 'mention');
-}
  if($id == $data->user_id){
-   return  action('ConfigController@getProfile');
+   return  redirect('/home');
  }
  else{
    $mention = "パスワードが間違っています";
