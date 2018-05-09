@@ -360,6 +360,10 @@
   position: absolute;
   left:194px;
   top:823px;
+  background-image: url(../icon1.png);
+  background-size: cover;
+  z-index: 1;
+
 }
 .floatt_2{
   position: absolute;
