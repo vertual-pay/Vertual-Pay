@@ -23,16 +23,16 @@
 
   <button type="submit" class="btn btn-primary-set">ログイン</button>
   </form>
-  @if(isset($mention))
-  <h1>$mention</h1>
-  @endif
+
   @if(empty($exist))
   <a class="notyet" href="/config/signup">{{ __('※ まだ設定パスワード・XEMアドレスを登録していない方はこちら') }}</a>
   @endif
   @if(empty($exist))
   <a href="/config/signup"><b style="font-size:26px; color: red;">XEMアドレスが登録されておりません。設定ページでXEMアドレスを登録してください</b></a>
   @endif
-
+  @if(isset($login))
+  <p>{{$login}}</p>
+  @endif
   </div>
 </div>
 </div>
