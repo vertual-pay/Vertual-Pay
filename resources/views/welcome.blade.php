@@ -23,6 +23,8 @@
                   <h3 class="floattt_3">決済確認機能</h3>
                   <h3 class="floattt_4">完全無料</h3>
 
+
+
                           <img src="/stacker.png" style="position:absolute; width:1282px; height:400px; top:1284px; left:0px; z-index:1;">
                           <img src="/account.png" style="position:absolute; width:1280px; height:614px; top:182px; left:0px; z-index:1;">
 
