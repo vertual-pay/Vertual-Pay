@@ -1,5 +1,5 @@
 # Vertual-Pay
-案件。共有用。自分でクローンしてください。
+NEM中心の決済システム
 # X-Server情報
 会員ID
 phg68922
