@@ -40,7 +40,7 @@
                                   var account_number = qr.account_number.value;
                                   var amount = qr.amount.value;
 
-                                  alert("伝票番号は" + account_number + "で、合計金額は、" + amount + "です。QRコードを発行してもよろしいでしょうか");
+                                  alert("伝票番号は" + account_number + "で、合計金額は、" + amount + "円です。QRコードを発行してもよろしいでしょうか");
 
                                 }
                                 </script>
