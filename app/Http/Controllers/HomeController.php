@@ -101,9 +101,9 @@ class HomeController extends Controller
 
 //支払うべき金額をリクエスト
       $amount = $request->amount;
-//xem/jpyを算出 １円あたりのXEMの料金
+//jpy/xemを算出 １円あたりのXEMの料金
       $rate =  $price_xem * $price_jpy;
-      $rate = 1 / $rate;
+
 
        //支払う額をXEMの価格に換算する
       $xem_price = $amount * $rate;
@@ -111,14 +111,12 @@ class HomeController extends Controller
        //ブロックチェーンに載せるときは、100000倍にしなければならない
 
 
-
-
       //ユーザー情報取得
       $user = Auth::user();
       $data = Config::where('user_id', $user->id)->first();
       //JSON構造に直す。
       $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" =>
-      $user->name."からメッセージ：  ".$data->message." 伝票番号：".$account_number."　  当時のレート：".$rate."xem/jpy", "name" => "Vertual-Pay") );
+      $user->name."からメッセージ：  ".$data->message." 伝票番号：".$account_number."　  当時のレート：".$rate."jpy/xem", "name" => "Vertual-Pay") );
       $qr_json = json_encode($qr_json);
 
       return view('qr',compact('data', 'amount','user','qr_json','xem_price','account_number','send'));
