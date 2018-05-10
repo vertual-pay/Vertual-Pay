@@ -1,5 +1,5 @@
 # Vertual-Pay
-NEM中心の決済システム  nem-qrcode.com
+NEM中心の決済システム  nem-qrcode.com(http://nem-qrcode.com/)
 # X-Server情報
 会員ID
 phg68922
