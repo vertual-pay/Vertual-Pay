@@ -44,4 +44,16 @@ git pull origin master
 Sccess fullyとでたらおk
 
 # Route設定
-/ 
+| URL | 説明 |
+----|---- 
+| /              | トップページ 　　　　　　　　　　　　　　　　　　　|
+| /index         | 各種コンテンツ一覧ページ　|
+| /account       | 会計ページ           |
+| /qr            | QR発行ページ　　　　　　　　　　　　　　　　　　　|
+| /other         | 寄付など　　　　　　　　　　　　　　　　　　　　　　　　　　|
+| /history       | 決済履歴　　　　　　　　　　　　　　　　　　　　　　　　　|
+| /config/signin |　設定ページへのログイン　　　　　|
+| /config/signup | 設定ページへの登録　　　　　　　　　|
+| /config/profile| 設定ページ　　　　　　　　　　　　　　　　　　　　　　|
+| /login         | ログインページ　　　　　　　　　　　　　　　　　|
+| /signup        | 登録ページ           | 
