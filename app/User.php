@@ -34,6 +34,16 @@ class User extends Authenticatable
         $this->status = 1;
         $this->save();
     }
+    /**
+    * Send the Password reset Notification
+    *
+    * @param string $token
+    * @return void
+    */
+    public function  sendPasswordResetNotification($token)
+    {
+      $this->notify(new CustomPasswordReset($token));
+    }
 
     public function config()
     {

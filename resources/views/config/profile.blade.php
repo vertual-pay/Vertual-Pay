@@ -14,31 +14,46 @@
       <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
           <p><input type="text" name="email"  placeholder="メールアドレス変更"></p>
+          <form method ="post">
+                                 <a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
+                                 録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
+                                      パスワード変更
+                                    </a>
+        </form>
+
       </div>
 
-      <script>
+      <script type="text/javascript">
       function user(num)
       {
         if(num==0){document.getElementById("user").style.visibility="visible"}
       }
       </script>
-
     @if(isset($user))
      <p><img src="/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-left:00px; margin-top:-400px;"></p>
     @endif
 
-      <p><input type="text" name="message"   id="message" placeholder="固定メッセージ"></p>
+      <p>
+        <input type="text" name="message"   id="message" placeholder="固定メッセージ">
+      </p>
+      <p>
+        <input type="radio" name="rate" id="rate" value="false">固定レートにする
+      </p>
+      <p>
+        <input type="radio" name="rate" id="rate" value="true">変動レートにする
+      </p>
+
 
 <p><input type="integer" name="rate_account"   id="rate_account" placeholder="rate設定"><br>
   現在の変動レートは<?php echo round($rate,2)?>XEM/JPY</p>
 
 <form>
-  <input type ="button" value="アドレスを変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
+  <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
 </form>
 
 
   <div id="address" style="visibility: hidden">
-    <p><input type="integer" name="address"  placeholder="アドレス変更"></p>
+    <p><input type="integer" name="address"  placeholder="XEMアドレス変更"></p>
 </div>
 <script>
 function hyoji(num)

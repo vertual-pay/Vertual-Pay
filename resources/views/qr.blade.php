@@ -2,6 +2,14 @@
 @section('content')
 
 @if(isset($qr_json))
+<?php
+  if($data->rate_account == true){
+  $xem_price = $amount * $rate;
+}else{
+  $xem_price = $amount / $data->rate_account;
+}
+?>
+
 <figure class="flame">
   <h1 class ="on-flame-account">お会計</h1>
   <div class="on-flame-qr">{!!QrCode::size(350)->generate($qr_json);!!}</div>
@@ -16,5 +24,6 @@
 </figcaption>
 </figure>
 <a href="/account"><input class="on-flame-return btn btn-primary-set"  type="button" value="戻る"></a>
+<a href="/confirm"><input class="on-flame-ok btn btn-primary-set"  type="button" value="OK" ><a>
 @endif
 @endsection

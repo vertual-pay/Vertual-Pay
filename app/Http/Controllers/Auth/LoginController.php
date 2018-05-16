@@ -50,4 +50,14 @@ class LoginController extends Controller
         'status' => 1,
       ];
     }
+    public function logout(Request $request)
+   {
+       $this->guard()->logout();
+
+       $request->session()->flush();
+
+       $request->session()->regenerate();
+
+       return redirect('/home');
+   }
 }
