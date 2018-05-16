@@ -19,6 +19,7 @@ class CreateConfigTable extends Migration
             $table->string('address')->nullable();
             $table->string('config_password')->nullable();
             $table->string('message')->nullable();
+            $table->string('message_foruser')->nullable();
             $table->boolean('rate')->default(true);
             $table->integer('rate_account')->nullable();
             $table->timestamps();
