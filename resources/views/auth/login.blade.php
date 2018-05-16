@@ -58,7 +58,7 @@
                                     {{ __('ログイン') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="/password/reset/{token}">
                                     {{ __('パスワードを忘れた場合') }}
                                 </a>
                             </div>

@@ -27,6 +27,11 @@ Route::get('/account', 'HomeController@account');
 Route::get('/history', 'HomeController@history');
 //QRコード
 Route::post('/qr', 'HomeController@qrcode');
+//決済確認
+Route::get('/confirm', 'HomeController@confirm');
+//Reset
+Route::get('/reset', 'ConfigController@resetpass')->name('reset');
+
 
 //その他ページ
 Route::get('/other', function(){

@@ -36,9 +36,11 @@
                   <h5 class="floatttt_2">店舗名を自動入力したり、<br>伝票番号を追加入力<br>できます。</h5>
                   <h5 class="floatttt_3">お会計後はしっかり決済<br>を完了できたか、履歴を<br>確認することができま<br>す。</h5>
                   <h5 class="floatttt_4">Virtual Payは全て皆様の<br>寄付にて運営されている<br>慈善サイトです。</h5>
-                  <input class="registerbutton1" type="button" value="新規登録" onclick="location.href='http://127.0.0.1:8000/register'">
-                  <input class="registerbutton2" type="button" value="新規登録" onclick="location.href='http://127.0.0.1:8000/register'">
-                  <input class="registerbutton3" type="button" value="新規登録" onclick="location.href='http://127.0.0.1:8000/register'">
-                  <input class="loginbutton" type="button" value="ログイン" onclick="location.href='http://127.0.0.1:8000/login'">
+
+                  <a href="/register"><input value="新規登録" class="registerbutton1" type="button"></a>
+                  <a href="/register"><input value="新規登録"　class="registerbutton2" type="button"></a>
+                  <a href="/register"><input value="新規登録"  class="registerbutton3" type="button"></a>
+                  <a href="/login"><input value="ログイン" class="loginbutton" type="button"></a>
+
 
       @endsection

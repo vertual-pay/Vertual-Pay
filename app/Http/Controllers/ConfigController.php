@@ -75,13 +75,15 @@ class ConfigController extends Controller
  {
   $true = Config::where('config_password', $request->config_password)->exists();
 
-  if(!empty($true)){return redirect()->action('ConfigController@getProfile');}
+  if(!empty($true)){
+    return redirect()->action('ConfigController@getProfile');
+  }
  else {
-  $id = Auth::id();
+     $id = Auth::id();
      $exist= Config::where('user_id', $id)->exists();
      $login = 'パスワードが違います';
    return view('config.signin',compact('exist','login'));
- }
+  }
  }
 
 
@@ -106,21 +108,27 @@ class ConfigController extends Controller
         if(isset($request->config_password))$data->config_password = $request->config_password;
         if(isset($request->message))$data->message = $request->message;
         if(isset($request->address))
-        $address = str_replace('-', '',$request->address);
-        $data->address = $request->address;
+        {$address = str_replace('-', '',$request->address);
+        $data->address = $address;}
+        if(isset($request->rate)){
+          if($request->rate == "false"){
+             $data->rate = false;
+          }
+          if($request->rate == "true"){
+            $data->rate = true;
+          }
+        }
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
-      redirect()->action('ConfigController@getProfile');
+      return redirect()->action('ConfigController@getProfile');
  }
 
  public function getProfile()
  {
-
    //アドレスとパスワード
    $user = Auth::user();
    $config = Config::where('user_id', $user->id)->first();
-
 
    //APIレート
      $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
@@ -136,5 +144,11 @@ class ConfigController extends Controller
      $rate = $price_jpy * $price_usd;
 
    return view('config.profile',compact('config','rate','user'));
+ }
+ public function resetpass()
+ {
+   $user = Auth::user();
+   \App\User::destroy($user->id);
+   return redirect('register');
  }
 }
