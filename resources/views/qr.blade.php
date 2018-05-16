@@ -18,7 +18,7 @@
  <figucaption class="on-flame-text">
  <p>¥ <?php echo number_format($amount) ?></p>
  <p>NEM <?php echo round($xem_price,3)?> XEM</p>
- <p>{{$data->message}}</p>
+ <p>コメント{{$data->message_foruser}}</p>
  <p>店名: {{$user->name}}</p>
 </figcaption>
 </figure>
