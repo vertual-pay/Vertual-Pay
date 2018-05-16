@@ -15,10 +15,10 @@
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
           <p><input type="text" name="email"  placeholder="メールアドレス変更"></p>
           <form method ="post">
-                                 <a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
+                              <p>   <a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
                                  録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
                                       パスワード変更
-                                    </a>
+                                    </a></p>
         </form>
 
       </div>
@@ -34,7 +34,10 @@
     @endif
 
       <p>
-        <input type="text" name="message"   id="message" placeholder="固定メッセージ">
+        <input type="text" name="message" id="message" placeholder="固定メッセージ">
+      </p>
+      <p>
+        <input type="text" name="message_foruser" id="message_foruser" placeholder="コメント">
       </p>
       <p>
         <input type="radio" name="rate" id="rate" value="false">固定レートにする
@@ -67,7 +70,8 @@ function hyoji(num)
 <div>
   @if(isset($config))
    <p>あなたのアドレスは:{{$config->address}}</p>
-   <p>伝票に乗る固定メッセージ:　{{$config->message}}</p>
+   <p>伝票に乗るコメント:　{{$config->message_foruser}}</p>
+   <p>お店用のメッセージ:  {{$config->message}}</p>
    <p>現在の御店のレート:　{{$config->rate_account}}XEM/JPY</p>
    @endif
  </div>

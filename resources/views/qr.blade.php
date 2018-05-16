@@ -3,7 +3,7 @@
 
 @if(isset($qr_json))
 <?php
-  if($data->rate_account == true){
+  if($data->rate == true){
   $xem_price = $amount * $rate;
 }else{
   $xem_price = $amount / $data->rate_account;
@@ -16,7 +16,6 @@
 <img src="/avatars/{{ $user->avatar }}" class="on-flame-avatar"style="width:180px; height:180px; float:left; border-radius:50%; margin-left:25px;">
 <img src="/frame.png">
  <figucaption class="on-flame-text">
- <p>伝票番号{{$account_number}}<p>
  <p>¥ <?php echo number_format($amount) ?></p>
  <p>NEM <?php echo round($xem_price,3)?> XEM</p>
  <p>{{$data->message}}</p>
