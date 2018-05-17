@@ -76,8 +76,8 @@ function hyoji(num)
    @endif
  </div>
   <p><input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <input style="font-size:30px; margin-left:15px;"type="submit" class="pull-right btn btn-primary" value="変更を保存する"></p>
+  <input style="font-size:30px; margin-left:15px; margin-bottom:10px;"type="submit" class="btn-primary" value="変更を保存する"></p>
  </form>
- <a href="/home"><input class="returnnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
+ <a href="/home"><input class="btn-primary" style="margin-bottom:10px; font-size:30px;" type="button" value="トップページへ戻る"></a>
 </div>
 @endsection
