@@ -118,6 +118,7 @@ class ConfigController extends Controller
             $data->rate = true;
           }
         }
+        if(isset($request->message_foruser))$data->message_foruser = $request->message_foruser;
         if(isset($request->rate_account))$data->rate_account = $request->rate_account;
         $data->save();
 
