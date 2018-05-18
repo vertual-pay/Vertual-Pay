@@ -87,6 +87,11 @@ class HomeController extends Controller
 
     public function qrcode(Request $request)
     {
+
+      //ユーザー情報取得
+      $user = Auth::user();
+      $data = Config::where('user_id', $user->id)->first();
+      if($data->rate == true){
       //伝票番号
       $account_number = $request->account_number;
       //APIレート USD/XEM
@@ -108,18 +113,43 @@ class HomeController extends Controller
       $rate =  $price_xem * $price_jpy;
       $rate = 1 / $rate;
 
+    $xem_price = $amount * $rate;
+    $xem_price = round($xem_price,2);
+
+      //JSON構造に直す。
+      $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" =>
+      $user->name."からメッセージ：  ".$data->message." 伝票番号：".$account_number." 代金:".$amount , "name" => "Vertual-Pay") );
+      $qr_json = json_encode($qr_json);
+
+      return view('qr',compact('data', 'amount','user','qr_json','account_number','send','rate'));
+    }else {
+      //伝票番号
+      $account_number = $request->account_number;
+      //APIレート USD/XEM
+      $base_url =  'https://api.coinmarketcap.com/v1/ticker/nem/';
+      $json = file_get_contents($base_url);
+      $json = json_decode($json, JSON_PRETTY_PRINT);
+      $price_xem = $json[0]["price_usd"];
 
 
+     //日本円  JPY/USD
+      $japanese_json = file_get_contents('http://api.aoikujira.com/kawase/json/usd');
+      $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
+      $price_jpy = $japanese_json["JPY"];
 
-       //支払う額をXEMの価格に換算する
-      $xem_price = $amount * $rate;
+//支払うべき金額をリクエスト
+      $amount = $request->amount;
+
+//jpy/xemを算出 １円あたりのXEMの料金
+      $rate =  $price_xem * $price_jpy;
+      $rate = 1 / $rate;
+
+      $xem_price = $amount / $data->rate_account;
       $xem_price = round($xem_price,2);
        //ブロックチェーンに載せるときは、100000倍にしなければならない
 
 
-      //ユーザー情報取得
-      $user = Auth::user();
-      $data = Config::where('user_id', $user->id)->first();
+
       //JSON構造に直す。
       $qr_json = array("v" => 2 ,"type" => 2, "data" => array("addr" => $data->address, "amount" => $xem_price * 1000000, "msg" =>
       $user->name."からメッセージ：  ".$data->message." 伝票番号：".$account_number." 代金:".$amount , "name" => "Vertual-Pay") );
@@ -127,6 +157,7 @@ class HomeController extends Controller
 
       return view('qr',compact('data', 'amount','user','qr_json','account_number','send','rate'));
     }
+  }
 
 //決済確認
     public function confirm()
