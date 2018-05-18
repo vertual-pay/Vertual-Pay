@@ -165,7 +165,8 @@ class ConfigController extends Controller
    $user = Auth::user();
    $data = Config::where('user_id', $user->id)->first();
 
-   $data->image_frame = $request->image_frame;
+   $data->image_frame = $request->image;
+   $data->save();
    return redirect()->action('ConfigController@getProfile');
  }
 }
