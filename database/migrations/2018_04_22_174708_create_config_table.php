@@ -22,6 +22,7 @@ class CreateConfigTable extends Migration
             $table->string('message_foruser')->nullable();
             $table->boolean('rate')->default(true);
             $table->integer('rate_account')->nullable();
+            $table->integer('image_frame')->default(1);
             $table->timestamps();
         });
     }

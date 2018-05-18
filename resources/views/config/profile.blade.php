@@ -53,6 +53,7 @@
 <form>
   <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
 </form>
+<p><a href="{{route('imgconfig')}}">請求画面の背景画像を変更する</a></p>
 
 
   <div id="address" style="visibility: hidden">
