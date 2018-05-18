@@ -5,7 +5,7 @@
 <form enctype="multipart/form-data" action = "{{route('config.profile')}}" method="post" class="form-horizontal" style="margin-top: 50px;">
     <div class="tabtabtab" style="color:#000;">
 　<h1>設定ページ</h1>
-    <p><input type="file" name="avatar" style=" margin-right:50px;"></p>
+    <p>(300✖️300)  <input type="file" name="avatar" style=" margin-right:50px;" value="ユーザー画像"><p>
       <p style="margin-top:200px;"> 名前 : {{$user->name}}</p>
       <p> メールアドレス: {{$user->email}}</p>
       <form>
@@ -71,8 +71,8 @@ function hyoji(num)
 <div>
   @if(isset($config))
    <p>あなたのアドレスは:{{$config->address}}</p>
-   <p>伝票に乗るコメント:　{{$config->message_foruser}}</p>
-   <p>お店用のメッセージ:  {{$config->message}}</p>
+   <p>伝票に乗るコメント:　{{$config->message}}</p>
+   <p>お店用のメッセージ:  {{$config->message_foruser}}</p>
    <p>現在の御店のレート:　{{$config->rate_account}}XEM/JPY</p>
    @endif
  </div>
