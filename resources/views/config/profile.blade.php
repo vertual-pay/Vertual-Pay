@@ -34,9 +34,11 @@
 
       <p>
         <input type="text" name="message" id="message" placeholder="固定メッセージ">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspXemメッセージに反映します。<br>店舗名などを入力すると、一つのアドレスで複数店舗を管理しやすくなります。
       </p>
       <p>
         <input type="text" name="message_foruser" id="message_foruser" placeholder="コメント">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp請求書（QRコード）に反映します。<br>お店・商品の紹介・今月のおススメなどを入力してお客様に訴求しましょう！
       </p>
       <p>
           <input type="radio" name="rate" id="rate" value="true">変動レートにする
@@ -46,13 +48,14 @@
       </p>
 
 
-<p><input type="integer" name="rate_account"   id="rate_account" placeholder="rate設定"><br>
+<p><input type="integer" name="rate_account"   id="rate_account" placeholder="rate設定">
   現在の変動レートは<?php echo round($rate,2)?>XEM/JPY</p>
 
 <form>
   <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
+  <p><a href="{{route('imgconfig')}}">請求画面の背景画像を変更する</a></p>
 </form>
-<p><a href="{{route('imgconfig')}}">請求画面の背景画像を変更する</a></p>
+
 
 
   <div id="address" style="visibility: hidden">
@@ -67,14 +70,14 @@ function hyoji(num)
   {document.getElementById("address").style.visibility="hidden";}
 }
 </script>
-<div>
+
   @if(isset($config))
    <p>あなたのアドレスは:{{$config->address}}</p>
    <p>伝票に乗るコメント:　{{$config->message}}</p>
    <p>お店用のメッセージ:  {{$config->message_foruser}}</p>
    <p>現在の御店のレート:　{{$config->rate_account}}XEM/JPY</p>
    @endif
- </div>
+
   <p><input type="hidden" name="_token" value="{{ csrf_token() }}">
   <input style="font-size:30px; margin-left:15px; margin-bottom:10px;"type="submit" class="btn-primary" value="変更を保存する"></p>
  </form>
