@@ -53,6 +53,7 @@
 <form>
   <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
 </form>
+<p><a href="{{route('imgconfig')}}">請求画面の背景画像を変更する</a></p>
 
 
   <div id="address" style="visibility: hidden">
@@ -76,8 +77,8 @@ function hyoji(num)
    @endif
  </div>
   <p><input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <input style="font-size:30px; margin-left:15px;"type="submit" class="pull-right btn btn-primary" value="変更を保存する"></p>
+  <input style="font-size:30px; margin-left:15px; margin-bottom:10px;"type="submit" class="btn-primary" value="変更を保存する"></p>
  </form>
- <a href="/home"><input class="returnnn btn btn-primary-set" type="button" value="トップページへ戻る"></a>
+ <a href="/home"><input class="btn-primary" style="margin-bottom:10px; font-size:30px;" type="button" value="トップページへ戻る"></a>
 </div>
 @endsection

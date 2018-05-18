@@ -31,6 +31,9 @@ Route::post('/qr', 'HomeController@qrcode');
 Route::get('/confirm', 'HomeController@confirm');
 //Reset
 Route::get('/reset', 'ConfigController@resetpass')->name('reset');
+//Imageconfig
+Route::get('/imgconfig', 'ConfigController@getimg')->name('imgconfig');
+Route::post('/imgconfig', 'ConfigController@postimg');
 
 
 //その他ページ
@@ -75,6 +78,15 @@ Route::group(['prefix' => 'config'], function() {
     Route::post('/signin',[
         'uses' => 'ConfigController@postSignin',
         'as' => 'config.signin'
+    ]);
+    //Imageconfig
+    Route::get('/imgconfig',[
+        'uses' => 'ConfigController@getimg',
+        'as' => 'config.imgconfig'
+    ]);
+    Route::post('/imgconfig',[
+        'uses' => 'ConfigController@postimg',
+        'as' => 'config.imgconfig'
     ]);
 
 });

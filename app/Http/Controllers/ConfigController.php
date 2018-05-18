@@ -151,4 +151,21 @@ class ConfigController extends Controller
    \App\User::destroy($user->id);
    return redirect('register');
  }
+
+ public function getimg()
+ {
+   //User取得
+   $user = Auth::user();
+   $data = Config::where('user_id', $user->id)->first();
+   return view('config.imgconfig', compact('data'));
+ }
+ public function postimg(Request $request)
+ {
+   //User取得
+   $user = Auth::user();
+   $data = Config::where('user_id', $user->id)->first();
+
+   $data->image_frame = $request->image_frame;
+   return redirect()->action('ConfigController@getProfile');
+ }
 }

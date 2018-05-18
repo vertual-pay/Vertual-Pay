@@ -39,6 +39,7 @@
   ?></td>
   </tr>
   </table>
+  <a href="/home"><input class="return-confirm  btn-primary-confirm" type="button" value="トップページへ戻る"></a>
 </div>
 @endfor
 @endsection

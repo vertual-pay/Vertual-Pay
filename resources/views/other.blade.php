@@ -18,7 +18,7 @@
 		寄付金は全てVirtual Payの運営・開発に充てられます。<br>
 		Xem address(寄付専用)<br>
 		NCL5ZT-RJPICJ-VZCM5U-Q7NULA-5DUFI3-TQCT5D-343N<br>
-      <img src="/vertual-paydonate.png" style="width:200px; height:200px; float:left;  margin-right:25px;">
+      <img src="/dominant.png" style="width:200px; height:200px; float:left;  margin-right:25px;">
 
 		</p>
 		</div>
