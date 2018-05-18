@@ -95,16 +95,16 @@ class ConfigController extends Controller
      $data = Config::where('user_id', $user->id)->first();
      //Userモデルの変更
      //お店の名前
-     if(isset($request->name)){$user->password(['name' => $request->name]);}
+     if(isset($request->name))$user->name = $request->name;
      if(isset($request->password)){$user->update(['password' => $request->password]);}
-     if(isset($request->email)){$user->update(['email' => $request->email]);}
+     if(isset($request->email))$user->email = $request->email;
      if($request->hasFile('avatar')){
        $avatar = $request->file('avatar');
        $filename = time() . '.' . $avatar->getClientOriginalExtension();
        Image::make($avatar)->resize(300, 300)->save(public_path('/avatars/' . $filename ));
        $user->avatar = $filename;
-       $user->save();
      }
+     $user->save();
         if(isset($request->config_password))$data->config_password = $request->config_password;
         if(isset($request->message))$data->message = $request->message;
         if(isset($request->address))
