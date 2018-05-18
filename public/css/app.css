@@ -813,3 +813,18 @@ td,th{
   transform: translate(175%,750%);
 }
 /*QRコード*/
+/*画像について*/
+.radiotype{
+ position:relative;
+}
+
+.radiotype input{
+  position: absolute;
+  top:195px;
+  right:90px;
+}
+.radiotype b{
+  position: absolute;
+  top:170px;
+  right:50px;
+}
