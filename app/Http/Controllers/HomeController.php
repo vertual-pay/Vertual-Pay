@@ -53,7 +53,6 @@ class HomeController extends Controller
         $japanese_json = json_decode($japanese_json, JSON_PRETTY_PRINT);
         $price_jpy = $japanese_json["JPY"];
 
-
         //APIレート　* 日本円
         $fix_rate = $price_jpy * $price_usd;
         return view('account',compact('data', 'fix_rate','price_jpy','user','qr_json'));
