@@ -37,7 +37,13 @@
 <tr>
     <td style="width: 15%;" ><?php echo date( "Y年 m月d日 h時m分s秒",$timestamp) ?></td>
     <td style="width: 23%;">{{$address["account"]["address"]}}</td>
-    <td style="width: 7%; " ><?php echo $result["data"][$i]["transaction"]["amount"] * 0.000001 ?></td>
+    <td style="width: 7%; " ><?php
+     if(!isset($result["data"][$i]["transaction"]["amount"])){
+        echo $result["data"][$i]["transaction"]["otherTrans"]["amount"] * 0.000001;
+     }else{
+       echo $result["data"][$i]["transaction"]["amount"] * 0.000001;
+     }
+  ?></td>
     <td style="font-size:12px;"><?php
      if(!empty($result["data"][$i]["transaction"]["message"])){
        $type = $result["data"][$i]["transaction"]["message"]["type"];

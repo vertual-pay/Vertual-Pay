@@ -13,13 +13,13 @@
       </form>
       <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
-          <p><input type="text" name="email"  placeholder="メールアドレス変更"></p>
-          <form method ="post">
-                              <p><a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
+
+          <p><a href="{{ route('reset')}}" onclick="return confirm('メールアドレスを変更するためには再登
+             録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')" >メールアドレス変更</a></p>
+          <p><a href="{{ route('reset')}}" onclick="return confirm('パスワードを変更するためには再登
                                  録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
                                       パスワード変更
                                     </a></p>
-        </form>
       </div>
 
       <script type="text/javascript">
