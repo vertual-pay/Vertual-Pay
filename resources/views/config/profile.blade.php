@@ -15,12 +15,11 @@
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
           <p><input type="text" name="email"  placeholder="メールアドレス変更"></p>
           <form method ="post">
-                              <p>   <a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
+                              <p><a href="{{ route('reset')}}" onclick="confirm('パスワードを変更するためには再登
                                  録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
                                       パスワード変更
                                     </a></p>
         </form>
-
       </div>
 
       <script type="text/javascript">
@@ -40,10 +39,10 @@
         <input type="text" name="message_foruser" id="message_foruser" placeholder="コメント">
       </p>
       <p>
-        <input type="radio" name="rate" id="rate" value="false">固定レートにする
+          <input type="radio" name="rate" id="rate" value="true">変動レートにする
       </p>
       <p>
-        <input type="radio" name="rate" id="rate" value="true">変動レートにする
+      <input type="radio" name="rate" id="rate" value="false">固定レートにする
       </p>
 
 
