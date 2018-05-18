@@ -103,6 +103,7 @@ class HomeController extends Controller
 
 //支払うべき金額をリクエスト
       $amount = $request->amount;
+
 //jpy/xemを算出 １円あたりのXEMの料金
       $rate =  $price_xem * $price_jpy;
       $rate = 1 / $rate;
@@ -112,7 +113,7 @@ class HomeController extends Controller
 
        //支払う額をXEMの価格に換算する
       $xem_price = $amount * $rate;
-
+      $xem_price = round($xem_price,2);
        //ブロックチェーンに載せるときは、100000倍にしなければならない
 
 
