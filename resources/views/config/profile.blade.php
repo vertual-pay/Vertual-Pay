@@ -14,12 +14,14 @@
       <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
 
-          <p><a href="{{ route('reset')}}" onclick="return confirm('メールアドレスを変更するためには再登
-             録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')" >メールアドレス変更</a></p>
-          <p><a href="{{ route('reset')}}" onclick="return confirm('パスワードを変更するためには再登
+          <p style="font-size:13px;"><a href="{{ route('reset')}}" onclick="return confirm('メールアドレスを変更するためには再登
+             録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')" >メールアドレス変更</a>&nbsp&nbsp&nbsp(メールアドレスを変更するためには再度新規登録が
+                                    必要になります。)</p>
+          <p style="font-size:13px;"><a href="{{ route('reset')}}" onclick="return confirm('パスワードを変更するためには再登
                                  録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
                                       パスワード変更
-                                    </a></p>
+                                    </a>&nbsp&nbsp&nbsp(パスワードを変更するためには再度新規登録が
+                                                           必要になります。)</p>
       </div>
 
       <script type="text/javascript">
