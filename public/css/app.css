@@ -375,12 +375,12 @@ left:250px;
 }
 @media (min-width:1080px){.accountnumber{
   position: absolute;
-  top:300px;
+  top:330px;
   left:530px;
 }}
 @media (max-width:1080px){.accountnumber{
   position: absolute;
-  top:300px;
+  top:330px;
   left:230px;
 }}
 .message inputtt{
@@ -391,7 +391,7 @@ left:250px;
 .message h3{
   position: absolute;
   left:500px;
-  top:30px;
+  top:80px;
 }
 .summ{
   position:absolute;
@@ -700,13 +700,15 @@ td,th{
   padding-left: 40%;
 }
 /*--決済履歴--*/
-@media (min-width:1080px){.amountmoney{
-  margin-left: -300px;
-  }}
+
 @media (max-width:1080px){.amountmoney{
   margin-left:-130px;
   margin-top:40px;
 }}
+@media (max-width:1080px){.amountmoney{
+  display: :none;
+}}
+
 
 .welcome-size h3{
   font-size: 28px;

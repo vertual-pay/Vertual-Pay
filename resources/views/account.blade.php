@@ -25,9 +25,10 @@
 
                             <h4 class="inputamount">合計金額を入力してください</h4>
                             <div class="amountmoney">
-                        		<input name="amount" id="amount" >
+                        		<input name="amount" id="amount" style="position:absolute; left:530px;">
                           </div>
-                        
+
+
                         </div>
                             <div class="summ"><p>円<p>
             </div>
