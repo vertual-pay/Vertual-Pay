@@ -16,7 +16,7 @@
 </div>
 
     <div class="message">
-    <h3>伝票番号を入力してください</h3>
+    <h3>伝票番号を入力してください </h3>
     <div class="accountnumber">
       <input name="account_number" id="account_number">
     </div>

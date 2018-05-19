@@ -43,7 +43,7 @@
                   <h5 class="floatttt_1">レートの自動計算に対応。<br>状況によってレートを<br>固定金額に切り替える<br>こともできます。</h5>
                   <h5 class="floatttt_2">店舗名を自動入力したり、<br>伝票番号を追加入力<br>できます。</h5>
                   <h5 class="floatttt_3">お会計後はしっかり決済<br>を完了できたか、履歴を<br>確認することができま<br>す。</h5>
-                  <h5 class="floatttt_4">Virtual Payは全て皆様の<br>寄付にて運営されている<br>慈善サイトです。</h5>
+                  <h5 class="floatttt_4">Virtual Payは,全て皆様の<br>寄付にて運営されている<br>慈善サイトです。</h5>
 
                   <a href="/register"><input value="新規登録" class="registerbutton1" type="button"></a>
                   <a href="/register"><input value="新規登録"　class="registerbutton2" type="button"></a>

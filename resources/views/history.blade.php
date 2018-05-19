@@ -13,7 +13,7 @@
     <tr>
       <th style="width:15%;">日時</th>
       <th style="width:23%">アドレス</th>
-      <th style="width:7%">XEM</th>
+      <th style="width:7%"> XEM</th>
       <th>メッセージ</th>
     </tr>
   </table>
