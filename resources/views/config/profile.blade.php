@@ -75,7 +75,11 @@ function hyoji(num)
    <p>あなたのアドレスは:{{$config->address}}</p>
    <p>伝票に乗るコメント:　{{$config->message}}</p>
    <p>お店用のメッセージ:  {{$config->message_foruser}}</p>
+   @if($config->rate==false)
    <p>現在の御店のレート:　{{$config->rate_account}}XEM/JPY</p>
+   @else
+   <p>現在の御店のレート: <?php echo round($rate,2)?>XEM/JPY</p>
+   @endif
    @endif
 
   <p><input type="hidden" name="_token" value="{{ csrf_token() }}">
