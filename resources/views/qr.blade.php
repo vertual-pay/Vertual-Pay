@@ -16,7 +16,7 @@
 <img src="/{{ $data->image_frame }}.png">
  <figucaption class="on-flame-text">
  <p>¥ <?php echo number_format($amount) ?></p>
- <p>NEM <?php echo round($xem_price,3)?> XEM</p>
+ <p>NEM <?php echo round($xem_price,3)?>  XEM</p>
  <p><div class="on-flame-comment">{{$data->message_foruser}}</div></p>
  <p><div class="on-flame-shopname">店名: {{$user->name}}</div></p>
 </figcaption>
