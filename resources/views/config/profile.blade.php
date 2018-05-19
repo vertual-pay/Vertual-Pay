@@ -9,11 +9,12 @@
       <p style="margin-top:200px;"> 名前 : {{$user->name}}</p>
       <p> メールアドレス: {{$user->email}}</p>
       <form>
-        <input type ="button" value="ユーザー情報を変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-380px;" onclick="user(0)">
+        <input type ="button" value="ユーザー情報を変更する" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-330px;" onclick="user(0)">
       </form>
       <div id="user" style="visibility: hidden">
           <p><input type="text" name="name"  placeholder="ユーザー名変更"></p>
 
+<<<<<<< HEAD
           <p style="font-size:13px;"><a href="{{ route('reset')}}" onclick="return confirm('メールアドレスを変更するためには再登
              録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')" >メールアドレス変更</a>&nbsp&nbsp&nbsp(メールアドレスを変更するためには再度新規登録が
                                     必要になります。)</p>
@@ -22,6 +23,14 @@
                                       パスワード変更
                                     </a>&nbsp&nbsp&nbsp(パスワードを変更するためには再度新規登録が
                                                            必要になります。)</p>
+=======
+          <p><a href="{{ route('reset')}}" onclick="return confirm('メールアドレスを変更するためには再登
+             録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')" >メールアドレス変更　※アカウント新規作成になります。(後々変更できるようにします)</a></p>
+          <p><a href="{{ route('reset')}}" onclick="return confirm('パスワードを変更するためには再登
+                                 録が必要になります。よろしいですか。（アドレスが同じであれば履歴情報などは消えておりません)')">
+                                      パスワード変更　※アカウント新規作成になります。(後々変更できるようにします)
+                                    </a></p>
+>>>>>>> f6c1bb76db501c725b0583965842833867544fd3
       </div>
 
       <script type="text/javascript">
@@ -54,8 +63,8 @@
   現在の変動レートは<?php echo round($rate,2)?>XEM/JPY</p>
 
 <form>
-  <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-400px;" onclick="hyoji(0)">
   <p><a href="{{route('imgconfig')}}">請求画面の背景画像を変更する</a></p>
+  <input type ="button" value="XEMアドレス変更" style="font-size:15px; background-color:#2CBAAD; color:#FFF; border-color:#000; margin-left:-360px;" onclick="hyoji(0)">
 </form>
 
 
@@ -85,8 +94,8 @@ function hyoji(num)
    @endif
 
   <p><input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <input style="font-size:30px; margin-left:15px; margin-bottom:10px;"type="submit" class="btn-primary" value="変更を保存する"></p>
+  <input style="font-size:30px; margin-left:15px; margin-bottom:-20px;"type="submit" class="btn-primary" value="変更を保存する"></p>
  </form>
- <a href="/home"><input class="btn-primary" style="margin-bottom:10px; font-size:30px;" type="button" value="トップページへ戻る"></a>
+ <a href="/home"><input class="btn-primary" style="margin-bottom:10px; margin-left:-100px; font-size:30px;" type="button" value="トップページへ戻る"></a>
 </div>
 @endsection
