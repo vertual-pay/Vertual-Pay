@@ -29,11 +29,6 @@
 <h3 class="floattt_4">完全無料</h3>
 </div>
 
-                        <div class="pc_part">
-                          <img src="/account.png" style="position:absolute; width:1280px; height:614px; top:182px; left:0px; z-index:1;">
-                          <img src="/icon.jpg" style="position:absolute; left:520px;top:880px; width:250px; height:250px">
-                          <img src="/stacker.png" style="position:absolute; top:1300px; left:20px;">
-                        </div>
                         <div class="sp_part">
                           <img src="/account.png" style="position:absolute; width:1024px; height:614px; top:202px; left:0px; z-index:1;">
                           <img src="/icon.jpg" style="position:absolute; left:370px;top:880px; width:250px; height:250px">

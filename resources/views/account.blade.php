@@ -25,7 +25,7 @@
 
                             <h4 class="inputamount">合計金額を入力してください</h4>
                             <div class="amountmoney">
-                        		<input name="amount" id="amount" style="position:absolute; left:530px;">
+                        		<input name="amount" id="amount" style="margin-left:-300px;">
                           </div>
 
 

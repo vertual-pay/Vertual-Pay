@@ -190,7 +190,7 @@ left:250px;
     left:515px;
     top:500px;
   }
-  .tabtab {
+  @media (min-width:1080px){.tabtab {
       margin:10px 0px 0px 500px;
       height:700px;
       font-weight: bold;
@@ -203,10 +203,24 @@ left:250px;
       width:40%;
       display: inline-block;
       text-align: center;
-  }
+  }}
+  @media (max-width:1080px){.tabtab {
+      margin:10px 0px 0px 200px;
+      height:700px;
+      font-weight: bold;
+      color: #6AB0E0;/*文字色*/
+      background: #f5f8fa;
+      border: solid 2px #2CBAAD;/*線*/
+      border-radius: 10px;/*角の丸み*/
+      font-size:30px;
+      float:left;
+      width:50%;
+      display: inline-block;
+      text-align: center;
+  }}
   @media (min-width:1080px){.tabtabtab {
       margin:10px 0px 0px 500px;
-      height:1050px;
+      height:1350px;
       font-weight: bold;
       color: #6AB0E0;/*文字色*/
       background: #f5f8fa;
@@ -220,7 +234,7 @@ left:250px;
   }}
   @media (max-width:1080px){.tabtabtab {
       margin:10px 0px 0px 200px;
-      height:950px;
+      height:1350px;
       font-weight: bold;
       color: #6AB0E0;/*文字色*/
       background: #f5f8fa;
@@ -228,7 +242,7 @@ left:250px;
       border-radius: 10px;/*角の丸み*/
       font-size:30px;
       float:left;
-      width:50%;
+      width:55%;
       display: inline-block;
       text-align: center;
   }}
@@ -299,22 +313,36 @@ left:250px;
       font-size:20px;
       color:#60CBC1;
   }
-.receiveadress{
+@media (min-width:1080px){.receiveadress{
       position: absolute;
       left:500px;
-      top:00px;
-}
-.history{
+      top:40px;
+}}
+@media (max-width:1080px){.receiveadress{
+      position: absolute;
+      left:200px;
+      top:0px;
+}}
+@media (min-width:1080px){.history{
       position: absolute;
       left:500px;
-      top:350px;
-}
-.history h5{
+      top:380px;
+}}
+@media (max-width:1080px){.history{
+      position: absolute;
+      left:00px;
+      top:380px;
+}}
+@media (min-width:1080px){.history h5{
       position: absolute;
       left:21px;
       width:180px;
-}
-
+}}
+@media (max-width:1080px){.history h5{
+      position: absolute;
+      left:21px;
+      width:180px;
+}}
 .QR{
   margin:100px;
   color: #FFF;
@@ -323,14 +351,22 @@ left:250px;
   top:750px;
   text-align: center;
 }
-.return{
+@media (min-width:1080px){.return{
   margin:100px;
   color: #FFF;
   position:absolute;
   left:490px;
-  top:700px;
+  top:600px;
   text-align: center;
-}
+}}
+@media (max-width:1080px){.return{
+  margin:100px;
+  color: #FFF;
+  position:absolute;
+  left:130px;
+  top:600px;
+  text-align: center;
+}}
 @media (min-width:1080px){.returnn{
   margin:100px;
   color: #FFF;
@@ -609,11 +645,16 @@ left:250px;
   left:27px;
   top:1960px;
 }
-.floatttt_2{
+@media (min-width:1080px){.floatttt_2{
   position: absolute;
   left:361px;
   top:1960px;
-}
+}}
+@media (max-width:1080px){.floatttt_2{
+  position: absolute;
+  left:279px;
+  top:1960px;
+}}
 .floatttt_3{
   position: absolute;
   left:685px;
@@ -702,11 +743,8 @@ td,th{
 /*--決済履歴--*/
 
 @media (max-width:1080px){.amountmoney{
-  margin-left:-130px;
+  margin-left:160px;
   margin-top:40px;
-}}
-@media (max-width:1080px){.amountmoney{
-  display: :none;
 }}
 
 
@@ -761,7 +799,7 @@ td,th{
   text-align: center;
   position: absolute;
   left:180px;
-  top:70px;
+  top:700px;
   z-index: 3;
 }}
 @media (min-width:1080px){.floatt_1{
@@ -1061,22 +1099,16 @@ td,th{
   z-index: 3;
   border-color: #000;
 }}
-@media screen and ( max-width: 1080px ) {
-.pc_part {
-display : none;
-}
-}
-
-@media screen and ( min-width: 1080px )  {
-.sp_part {
-display : none;
-}
-}
-.history{
+@media (min-width:1080px){.history{
   position: absolute;
   top:350px;
   left:500px;
-}
+}}
+@media (max-width:1080px){.history{
+  position: absolute;
+  top:350px;
+  left:200px;
+}}
 .history h5{
   position: absolute;
   top:10px;
